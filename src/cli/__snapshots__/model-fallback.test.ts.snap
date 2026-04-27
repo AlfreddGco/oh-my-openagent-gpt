@@ -1,0 +1,2213 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`generateModelConfig no providers available returns ULTIMATE_FALLBACK for all agents and categories when no providers 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig single native provider avoids Anthropic agent defaults when only Claude is available 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig single native provider avoids Anthropic agent defaults with isMax20 flag 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig single native provider uses OpenAI models when only OpenAI is available 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "explore": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "librarian": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "metis": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "momus": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "multimodal-looker": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5-nano",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "oracle": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "prometheus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "deep": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "quick": {
+      "model": "openai/gpt-5.4-mini",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "unspecified-high": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.3-codex",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "unspecified-low": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.3-codex",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "writing": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig single native provider uses OpenAI models with isMax20 flag 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "explore": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "librarian": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "metis": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "momus": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "multimodal-looker": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5-nano",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "oracle": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "prometheus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "deep": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "quick": {
+      "model": "openai/gpt-5.4-mini",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "unspecified-high": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "unspecified-low": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.3-codex",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "writing": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig single native provider ignores unsupported Gemini-only availability 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig single native provider ignores unsupported Gemini-only availability with isMax20 flag 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig all native providers uses supported-provider routing when all native providers are available 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "explore": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "librarian": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "metis": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "momus": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "multimodal-looker": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5-nano",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "oracle": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "prometheus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "deep": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "quick": {
+      "model": "openai/gpt-5.4-mini",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "unspecified-high": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.3-codex",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "unspecified-low": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.3-codex",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "writing": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig all native providers uses supported-provider routing with isMax20 flag when all native providers are available 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "explore": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "librarian": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "metis": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "momus": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "multimodal-looker": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5-nano",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "oracle": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "prometheus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "deep": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "quick": {
+      "model": "openai/gpt-5.4-mini",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "unspecified-high": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "unspecified-low": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.3-codex",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "writing": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig fallback providers ignores unsupported OpenCode Zen-only availability 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig fallback providers ignores unsupported OpenCode Zen-only availability with isMax20 flag 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig fallback providers ignores unsupported Copilot-only availability 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig fallback providers ignores unsupported Copilot-only availability with isMax20 flag 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig fallback providers ignores unsupported ZAI-only availability 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig fallback providers ignores unsupported ZAI-only availability with isMax20 flag 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig mixed provider scenarios ignores unsupported Claude + OpenCode Zen combination 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig mixed provider scenarios uses OpenAI and ignores unsupported Copilot 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "explore": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "librarian": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "metis": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "momus": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "multimodal-looker": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5-nano",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "oracle": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "prometheus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "deep": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "quick": {
+      "model": "openai/gpt-5.4-mini",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "unspecified-high": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.3-codex",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "unspecified-low": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.3-codex",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "writing": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig mixed provider scenarios ignores unsupported Claude + ZAI combination 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig mixed provider scenarios ignores unsupported Gemini + Claude combination 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig mixed provider scenarios ignores all unsupported fallback providers together 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5-nano",
+    },
+    "explore": {
+      "model": "openai/gpt-5-nano",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "librarian": {
+      "model": "openai/gpt-5-nano",
+    },
+    "metis": {
+      "model": "openai/gpt-5-nano",
+    },
+    "momus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5-nano",
+    },
+    "oracle": {
+      "model": "openai/gpt-5-nano",
+    },
+    "prometheus": {
+      "model": "openai/gpt-5-nano",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5-nano",
+    },
+    "deep": {
+      "model": "openai/gpt-5-nano",
+    },
+    "quick": {
+      "model": "openai/gpt-5-nano",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5-nano",
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5-nano",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5-nano",
+    },
+    "writing": {
+      "model": "openai/gpt-5-nano",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig mixed provider scenarios uses supported providers when all providers are available 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "explore": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "librarian": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "metis": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "momus": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "multimodal-looker": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5-nano",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "oracle": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "prometheus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "deep": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "quick": {
+      "model": "openai/gpt-5.4-mini",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "unspecified-high": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.3-codex",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "unspecified-low": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.3-codex",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "writing": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig mixed provider scenarios uses supported providers with isMax20 flag when all providers are available 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "explore": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "librarian": {
+      "model": "openai/gpt-5.4-mini-fast",
+    },
+    "metis": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "momus": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "multimodal-looker": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5-nano",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "oracle": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "prometheus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "deep": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "quick": {
+      "model": "openai/gpt-5.4-mini",
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "unspecified-high": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.5",
+          "variant": "high",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "xhigh",
+    },
+    "unspecified-low": {
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.3-codex",
+          "variant": "medium",
+        },
+      ],
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+    "visual-engineering": {
+      "model": "openai/gpt-5.5",
+      "variant": "high",
+    },
+    "writing": {
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig Vercel AI Gateway provider uses vercel/ model strings when only Vercel AI Gateway is available 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "fallback_models": [
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+      ],
+      "model": "vercel/moonshotai/kimi-k2.5",
+    },
+    "explore": {
+      "fallback_models": [
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+      ],
+      "model": "vercel/minimax/minimax-m2.7-highspeed",
+    },
+    "librarian": {
+      "fallback_models": [
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+      ],
+      "model": "vercel/minimax/minimax-m2.7-highspeed",
+    },
+    "metis": {
+      "fallback_models": [
+        {
+          "model": "vercel/k2p5",
+        },
+      ],
+      "model": "vercel/zai/glm-5",
+    },
+    "momus": {
+      "fallback_models": [
+        {
+          "model": "vercel/zai/glm-5",
+        },
+      ],
+      "model": "vercel/google/gemini-3.1-pro-preview",
+      "variant": "high",
+    },
+    "multimodal-looker": {
+      "fallback_models": [
+        {
+          "model": "vercel/zai/glm-4.6v",
+        },
+      ],
+      "model": "vercel/moonshotai/kimi-k2.5",
+    },
+    "oracle": {
+      "fallback_models": [
+        {
+          "model": "vercel/zai/glm-5",
+        },
+      ],
+      "model": "vercel/google/gemini-3.1-pro-preview",
+      "variant": "high",
+    },
+    "prometheus": {
+      "fallback_models": [
+        {
+          "model": "vercel/google/gemini-3.1-pro-preview",
+        },
+      ],
+      "model": "vercel/zai/glm-5",
+    },
+    "sisyphus": {
+      "fallback_models": [
+        {
+          "model": "vercel/k2p5",
+        },
+        {
+          "model": "vercel/zai/glm-5",
+        },
+        {
+          "model": "vercel/big-pickle",
+        },
+      ],
+      "model": "vercel/moonshotai/kimi-k2.5",
+    },
+    "sisyphus-junior": {
+      "fallback_models": [
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+        {
+          "model": "vercel/big-pickle",
+        },
+      ],
+      "model": "vercel/moonshotai/kimi-k2.5",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "vercel/google/gemini-3.1-pro-preview",
+      "variant": "high",
+    },
+    "deep": {
+      "model": "vercel/google/gemini-3.1-pro-preview",
+      "variant": "high",
+    },
+    "quick": {
+      "fallback_models": [
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+      ],
+      "model": "vercel/google/gemini-3-flash",
+    },
+    "ultrabrain": {
+      "fallback_models": [
+        {
+          "model": "vercel/zai/glm-5",
+        },
+      ],
+      "model": "vercel/google/gemini-3.1-pro-preview",
+      "variant": "high",
+    },
+    "unspecified-high": {
+      "fallback_models": [
+        {
+          "model": "vercel/google/gemini-3-flash",
+        },
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+      ],
+      "model": "vercel/moonshotai/kimi-k2.5",
+    },
+    "unspecified-low": {
+      "fallback_models": [
+        {
+          "model": "vercel/google/gemini-3-flash",
+        },
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+      ],
+      "model": "vercel/moonshotai/kimi-k2.5",
+    },
+    "visual-engineering": {
+      "fallback_models": [
+        {
+          "model": "vercel/zai/glm-5",
+        },
+        {
+          "model": "vercel/k2p5",
+        },
+      ],
+      "model": "vercel/google/gemini-3.1-pro-preview",
+      "variant": "high",
+    },
+    "writing": {
+      "fallback_models": [
+        {
+          "model": "vercel/moonshotai/kimi-k2.5",
+        },
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+      ],
+      "model": "vercel/google/gemini-3-flash",
+    },
+  },
+}
+`;
+
+exports[`generateModelConfig Vercel AI Gateway provider uses vercel/ model strings with isMax20 flag 1`] = `
+{
+  "$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
+  "agents": {
+    "atlas": {
+      "fallback_models": [
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+      ],
+      "model": "vercel/moonshotai/kimi-k2.5",
+    },
+    "explore": {
+      "fallback_models": [
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+      ],
+      "model": "vercel/minimax/minimax-m2.7-highspeed",
+    },
+    "librarian": {
+      "fallback_models": [
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+      ],
+      "model": "vercel/minimax/minimax-m2.7-highspeed",
+    },
+    "metis": {
+      "fallback_models": [
+        {
+          "model": "vercel/k2p5",
+        },
+      ],
+      "model": "vercel/zai/glm-5",
+    },
+    "momus": {
+      "fallback_models": [
+        {
+          "model": "vercel/zai/glm-5",
+        },
+      ],
+      "model": "vercel/google/gemini-3.1-pro-preview",
+      "variant": "high",
+    },
+    "multimodal-looker": {
+      "fallback_models": [
+        {
+          "model": "vercel/zai/glm-4.6v",
+        },
+      ],
+      "model": "vercel/moonshotai/kimi-k2.5",
+    },
+    "oracle": {
+      "fallback_models": [
+        {
+          "model": "vercel/zai/glm-5",
+        },
+      ],
+      "model": "vercel/google/gemini-3.1-pro-preview",
+      "variant": "high",
+    },
+    "prometheus": {
+      "fallback_models": [
+        {
+          "model": "vercel/google/gemini-3.1-pro-preview",
+        },
+      ],
+      "model": "vercel/zai/glm-5",
+    },
+    "sisyphus": {
+      "fallback_models": [
+        {
+          "model": "vercel/k2p5",
+        },
+        {
+          "model": "vercel/zai/glm-5",
+        },
+        {
+          "model": "vercel/big-pickle",
+        },
+      ],
+      "model": "vercel/moonshotai/kimi-k2.5",
+    },
+    "sisyphus-junior": {
+      "fallback_models": [
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+        {
+          "model": "vercel/big-pickle",
+        },
+      ],
+      "model": "vercel/moonshotai/kimi-k2.5",
+    },
+  },
+  "categories": {
+    "artistry": {
+      "model": "vercel/google/gemini-3.1-pro-preview",
+      "variant": "high",
+    },
+    "deep": {
+      "model": "vercel/google/gemini-3.1-pro-preview",
+      "variant": "high",
+    },
+    "quick": {
+      "fallback_models": [
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+      ],
+      "model": "vercel/google/gemini-3-flash",
+    },
+    "ultrabrain": {
+      "fallback_models": [
+        {
+          "model": "vercel/zai/glm-5",
+        },
+      ],
+      "model": "vercel/google/gemini-3.1-pro-preview",
+      "variant": "high",
+    },
+    "unspecified-high": {
+      "fallback_models": [
+        {
+          "model": "vercel/k2p5",
+        },
+        {
+          "model": "vercel/moonshotai/kimi-k2.5",
+        },
+      ],
+      "model": "vercel/zai/glm-5",
+    },
+    "unspecified-low": {
+      "fallback_models": [
+        {
+          "model": "vercel/google/gemini-3-flash",
+        },
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+      ],
+      "model": "vercel/moonshotai/kimi-k2.5",
+    },
+    "visual-engineering": {
+      "fallback_models": [
+        {
+          "model": "vercel/zai/glm-5",
+        },
+        {
+          "model": "vercel/k2p5",
+        },
+      ],
+      "model": "vercel/google/gemini-3.1-pro-preview",
+      "variant": "high",
+    },
+    "writing": {
+      "fallback_models": [
+        {
+          "model": "vercel/moonshotai/kimi-k2.5",
+        },
+        {
+          "model": "vercel/minimax/minimax-m2.7",
+        },
+      ],
+      "model": "vercel/google/gemini-3-flash",
+    },
+  },
+}
+`;

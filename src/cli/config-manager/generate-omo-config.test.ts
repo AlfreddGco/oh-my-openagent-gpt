@@ -6,7 +6,7 @@ import { generateOmoConfig } from "../config-manager"
 import type { InstallConfig } from "../types"
 
 describe("generateOmoConfig - model fallback system", () => {
-  test("uses github-copilot sonnet fallback when only copilot available", () => {
+  test("ignores unsupported Copilot-only availability", () => {
     //#given
     const config: InstallConfig = {
       hasClaude: false,
@@ -25,10 +25,8 @@ describe("generateOmoConfig - model fallback system", () => {
     const result = generateOmoConfig(config)
 
     //#then
-    expect([
-      "github-copilot/claude-opus-4.7",
-      "github-copilot/claude-opus-4-7",
-    ]).toContain((result.agents as Record<string, { model: string }>).sisyphus.model)
+    expect((result.agents as Record<string, { model?: string }>).sisyphus).toBeUndefined()
+    expect((result.agents as Record<string, { model: string }>).explore.model).toBe("openai/gpt-5-nano")
   })
 
   test("uses ultimate fallback when no providers configured", () => {
@@ -54,7 +52,7 @@ describe("generateOmoConfig - model fallback system", () => {
     expect((result.agents as Record<string, { model: string }>).sisyphus).toBeUndefined()
   })
 
-  test("uses ZAI model for librarian when Z.ai is available", () => {
+  test("ignores unsupported ZAI-only availability", () => {
     //#given
     const config: InstallConfig = {
       hasClaude: true,
@@ -73,8 +71,8 @@ describe("generateOmoConfig - model fallback system", () => {
     const result = generateOmoConfig(config)
 
     //#then
-    expect((result.agents as Record<string, { model: string }>).librarian.model).toBe("zai-coding-plan/glm-4.7")
-    expect((result.agents as Record<string, { model: string }>).sisyphus.model).toBe("anthropic/claude-opus-4-7")
+    expect((result.agents as Record<string, { model: string }>).librarian.model).toBe("openai/gpt-5-nano")
+    expect((result.agents as Record<string, { model?: string }>).sisyphus).toBeUndefined()
   })
 
   test("uses native OpenAI models when only ChatGPT available", () => {
@@ -97,9 +95,33 @@ describe("generateOmoConfig - model fallback system", () => {
 
     //#then
     expect((result.agents as Record<string, { model: string; variant?: string }>).sisyphus.model).toBe("openai/gpt-5.5")
-    expect((result.agents as Record<string, { model: string; variant?: string }>).sisyphus.variant).toBe("medium")
+    expect((result.agents as Record<string, { model: string; variant?: string }>).sisyphus.variant).toBe("xhigh")
     expect((result.agents as Record<string, { model: string }>).oracle.model).toBe("openai/gpt-5.5")
     expect((result.agents as Record<string, { model: string }>)['multimodal-looker'].model).toBe("openai/gpt-5.5")
+  })
+
+  test("uses Vercel-routed Gemini for visual-engineering when Vercel is available", () => {
+    //#given
+    const config: InstallConfig = {
+      hasClaude: false,
+      isMax20: false,
+      hasOpenAI: false,
+      hasGemini: false,
+      hasCopilot: false,
+      hasOpencodeZen: false,
+      hasZaiCodingPlan: false,
+      hasKimiForCoding: false,
+      hasOpencodeGo: false,
+      hasVercelAiGateway: true,
+    }
+
+    //#when
+    const result = generateOmoConfig(config)
+
+    //#then
+    const visual = (result.categories as Record<string, { model: string; variant?: string }>)["visual-engineering"]
+    expect(visual.model).toBe("vercel/google/gemini-3.1-pro-preview")
+    expect(visual.variant).toBe("high")
   })
 
   test("adds fallback_models when multiple providers are available", () => {
@@ -131,23 +153,18 @@ describe("generateOmoConfig - model fallback system", () => {
     }>
 
     //#then
-    expect(agents.sisyphus.model).toBe("anthropic/claude-opus-4-7")
+    expect(agents.sisyphus.model).toBe("openai/gpt-5.5")
+    expect(agents.sisyphus.variant).toBe("xhigh")
     expect(agents.sisyphus.fallback_models).toEqual([
-      {
-        model: "openai/gpt-5.5",
-        variant: "medium",
-      },
+      { model: "openai/gpt-5.5", variant: "medium" },
     ])
     expect(categories.deep.model).toBe("openai/gpt-5.5")
     expect(categories.deep.fallback_models).toEqual([
-      {
-        model: "anthropic/claude-opus-4-7",
-        variant: "max",
-      },
+      { model: "openai/gpt-5.5", variant: "xhigh" },
     ])
   })
 
-  test("uses haiku for explore when Claude max20", () => {
+  test("uses gpt-5-nano for explore when only Claude is available", () => {
     //#given
     const config: InstallConfig = {
       hasClaude: true,
@@ -166,10 +183,10 @@ describe("generateOmoConfig - model fallback system", () => {
     const result = generateOmoConfig(config)
 
     //#then
-    expect((result.agents as Record<string, { model: string }>).explore.model).toBe("anthropic/claude-haiku-4-5")
+    expect((result.agents as Record<string, { model: string }>).explore.model).toBe("openai/gpt-5-nano")
   })
 
-  test("uses haiku for explore regardless of max20 flag", () => {
+  test("uses gpt-5-nano for explore regardless of max20 flag", () => {
     //#given
     const config: InstallConfig = {
       hasClaude: true,
@@ -188,6 +205,6 @@ describe("generateOmoConfig - model fallback system", () => {
     const result = generateOmoConfig(config)
 
     //#then
-    expect((result.agents as Record<string, { model: string }>).explore.model).toBe("anthropic/claude-haiku-4-5")
+    expect((result.agents as Record<string, { model: string }>).explore.model).toBe("openai/gpt-5-nano")
   })
 })

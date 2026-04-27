@@ -78,7 +78,7 @@ export async function runTuiInstaller(args: InstallArgs, version: string): Promi
   }
 
   if (!config.hasClaude && !config.hasOpenAI && !config.hasGemini && !config.hasCopilot && !config.hasOpencodeZen && !config.hasVercelAiGateway) {
-    p.log.warn("No model providers configured. Using opencode/big-pickle as fallback.")
+    p.log.warn("No supported model providers configured. Using openai/gpt-5-nano as fallback.")
   }
 
   p.note(formatConfigSummary(config), isUpdate ? "Updated Configuration" : "Installation Complete")

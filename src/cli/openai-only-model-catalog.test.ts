@@ -46,7 +46,7 @@ describe("generateModelConfig OpenAI-only model catalog", () => {
     expect(result.categories?.writing).toEqual({ model: "openai/gpt-5.5", variant: "medium" })
   })
 
-  test("does not apply OpenAI-only overrides when OpenCode Go is also available", () => {
+  test("still applies OpenAI-only overrides when unsupported providers are also available", () => {
     // #given
     const config = createConfig({ hasOpenAI: true, hasOpencodeGo: true })
 
@@ -54,10 +54,22 @@ describe("generateModelConfig OpenAI-only model catalog", () => {
     const result = generateModelConfig(config)
 
     // #then
-    expect(result.agents?.explore).toMatchObject({ model: "openai/gpt-5.4-mini-fast" })
-    expect(result.agents?.librarian).toMatchObject({ model: "openai/gpt-5.4-mini-fast" })
-    expect(result.agents?.explore).not.toMatchObject({ variant: "medium" })
-    expect(result.agents?.librarian).not.toMatchObject({ variant: "medium" })
-    expect(result.categories?.quick).toMatchObject({ model: "openai/gpt-5.4-mini" })
+    expect(result.agents?.explore).toEqual({ model: "openai/gpt-5.4-mini-fast" })
+    expect(result.agents?.librarian).toEqual({ model: "openai/gpt-5.4-mini-fast" })
+    expect(result.categories?.quick).toEqual({ model: "openai/gpt-5.4-mini" })
+  })
+
+  test("does not apply OpenAI-only overrides when Vercel is also available", () => {
+    // #given
+    const config = createConfig({ hasOpenAI: true, hasVercelAiGateway: true })
+
+    // #when
+    const result = generateModelConfig(config)
+
+    // #then
+    expect(result.categories?.["visual-engineering"]).toMatchObject({
+      model: "vercel/google/gemini-3.1-pro-preview",
+      variant: "high",
+    })
   })
 })

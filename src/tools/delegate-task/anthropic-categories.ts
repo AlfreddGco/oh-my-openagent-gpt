@@ -15,7 +15,7 @@ This is NOT a default choice - it's for genuinely unclassifiable moderate-effort
 </Category_Context>
 
 <Caller_Warning>
-THIS CATEGORY USES A MID-TIER MODEL (claude-sonnet-4-6).
+THIS CATEGORY USES A MID-TIER GPT MODEL (gpt-5.5 medium).
 
 **PROVIDE CLEAR STRUCTURE:**
 1. MUST DO: Enumerate required actions explicitly
@@ -41,13 +41,13 @@ If task is unclassifiable but moderate-effort, use unspecified-low instead.
 export const ANTHROPIC_CATEGORIES: BuiltinCategoryDefinition[] = [
   {
     name: "unspecified-low",
-    config: { model: "anthropic/claude-sonnet-4-6" },
+    config: { model: "openai/gpt-5.5", variant: "medium" },
     description: "Tasks that don't fit other categories, low effort required",
     promptAppend: UNSPECIFIED_LOW_CATEGORY_PROMPT_APPEND,
   },
   {
     name: "unspecified-high",
-    config: { model: "anthropic/claude-opus-4-7", variant: "max" },
+    config: { model: "openai/gpt-5.5", variant: "xhigh" },
     description: "Tasks that don't fit other categories, high effort required",
     promptAppend: UNSPECIFIED_HIGH_CATEGORY_PROMPT_APPEND,
   },

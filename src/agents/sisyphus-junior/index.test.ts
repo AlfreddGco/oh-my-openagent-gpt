@@ -156,9 +156,9 @@ describe("createSisyphusJuniorAgentWithOverrides", () => {
       expect(result.thinking).toBeUndefined()
     })
 
-    test("#given Claude model #when agent is created #then injects thinking", () => {
+    test("#given legacy non-GPT model #when agent is created #then injects thinking", () => {
       // given
-      const override = { model: "anthropic/claude-sonnet-4-6" }
+      const override = { model: "custom/legacy-model" }
 
       // when
       const result = createSisyphusJuniorAgentWithOverrides(override)
@@ -239,9 +239,9 @@ describe("createSisyphusJuniorAgentWithOverrides", () => {
   })
 
   describe("useTaskSystem integration", () => {
-    test("useTaskSystem=true produces Task_Discipline prompt for Claude", () => {
+    test("useTaskSystem=true produces Task_Discipline prompt for legacy models", () => {
       //#given
-      const override = { model: "anthropic/claude-sonnet-4-6" }
+      const override = { model: "custom/legacy-model" }
 
       //#when
       const result = createSisyphusJuniorAgentWithOverrides(override, undefined, true)
@@ -277,9 +277,9 @@ describe("createSisyphusJuniorAgentWithOverrides", () => {
       expect(result.prompt).not.toContain("task_create")
     })
 
-    test("useTaskSystem=true includes task_create/task_update in Claude prompt", () => {
+    test("useTaskSystem=true includes task_create/task_update in legacy-model prompt", () => {
       //#given
-      const override = { model: "anthropic/claude-sonnet-4-6" }
+      const override = { model: "custom/legacy-model" }
 
       //#when
       const result = createSisyphusJuniorAgentWithOverrides(override, undefined, true)
@@ -303,7 +303,7 @@ describe("createSisyphusJuniorAgentWithOverrides", () => {
 
     test("useTaskSystem=false uses todowrite instead of task_create", () => {
       //#given
-      const override = { model: "anthropic/claude-sonnet-4-6" }
+      const override = { model: "custom/legacy-model" }
 
       //#when
       const result = createSisyphusJuniorAgentWithOverrides(override, undefined, false)
@@ -324,12 +324,12 @@ describe("createSisyphusJuniorAgentWithOverrides", () => {
 
       // then
       expect(result.prompt).toContain("Sisyphus-Junior")
-      expect(result.prompt).toContain("Execute tasks directly")
+      expect(result.prompt).toContain("based on GPT-5.5")
     })
 
-    test("Claude model uses default prompt with discipline section", () => {
+    test("legacy non-GPT model uses default prompt with discipline section", () => {
       // given
-      const override = { model: "anthropic/claude-sonnet-4-6" }
+      const override = { model: "custom/legacy-model" }
 
       // when
       const result = createSisyphusJuniorAgentWithOverrides(override)
@@ -383,24 +383,24 @@ describe("createSisyphusJuniorAgentWithOverrides", () => {
       expect(result.prompt).toContain("`edit` and `write`")
     })
 
-    test("GPT variants deny apply_patch while Claude variants do not", () => {
+    test("GPT variants deny apply_patch while legacy variants do not", () => {
       // given
       const gpt54Override = { model: "openai/gpt-5.4" }
       const gpt53Override = { model: "openai/gpt-5.3-codex" }
       const gptGenericOverride = { model: "openai/gpt-4o" }
-      const claudeOverride = { model: "anthropic/claude-sonnet-4-6" }
+      const legacyOverride = { model: "custom/legacy-model" }
 
       // when
       const gpt54Result = createSisyphusJuniorAgentWithOverrides(gpt54Override)
       const gpt53Result = createSisyphusJuniorAgentWithOverrides(gpt53Override)
       const gptGenericResult = createSisyphusJuniorAgentWithOverrides(gptGenericOverride)
-      const claudeResult = createSisyphusJuniorAgentWithOverrides(claudeOverride)
+      const legacyResult = createSisyphusJuniorAgentWithOverrides(legacyOverride)
 
       // then
       expect(gpt54Result.permission ?? {}).toHaveProperty("apply_patch", "deny")
       expect(gpt53Result.permission ?? {}).toHaveProperty("apply_patch", "deny")
       expect(gptGenericResult.permission ?? {}).toHaveProperty("apply_patch", "deny")
-      expect(claudeResult.permission ?? {}).not.toHaveProperty("apply_patch")
+      expect(legacyResult.permission ?? {}).not.toHaveProperty("apply_patch")
     })
 
     test("prompt_append is added after base prompt", () => {
@@ -411,7 +411,7 @@ describe("createSisyphusJuniorAgentWithOverrides", () => {
       const result = createSisyphusJuniorAgentWithOverrides(override)
 
       // then
-      const baseEndIndex = result.prompt!.indexOf("</Style>")
+      const baseEndIndex = result.prompt!.indexOf("# Category context")
       const appendIndex = result.prompt!.indexOf("CUSTOM_MARKER_FOR_TEST")
       expect(baseEndIndex).not.toBe(-1)
       expect(appendIndex).toBeGreaterThan(baseEndIndex)
@@ -486,9 +486,9 @@ describe("getSisyphusJuniorPromptSource", () => {
     expect(source).toBe("gpt")
   })
 
-  test("returns 'default' for Claude models", () => {
+  test("returns 'default' for legacy non-GPT models", () => {
     // given
-    const model = "anthropic/claude-sonnet-4-6"
+    const model = "custom/legacy-model"
 
     // when
     const source = getSisyphusJuniorPromptSource(model)
@@ -553,9 +553,9 @@ describe("buildSisyphusJuniorPrompt", () => {
     expect(prompt).toContain("Do not use `apply_patch`")
   })
 
-  test("Claude model prompt contains Claude-specific sections", () => {
+  test("legacy non-GPT model prompt contains default prompt sections", () => {
     // given
-    const model = "anthropic/claude-sonnet-4-6"
+    const model = "custom/legacy-model"
 
     // when
     const prompt = buildSisyphusJuniorPrompt(model, false)
@@ -590,9 +590,9 @@ describe("buildSisyphusJuniorPrompt", () => {
     expect(prompt).toContain("task_create")
   })
 
-  test("useTaskSystem=false includes Todo_Discipline for Claude", () => {
+  test("useTaskSystem=false includes Todo_Discipline for legacy models", () => {
     // given
-    const model = "anthropic/claude-sonnet-4-6"
+    const model = "custom/legacy-model"
 
     // when
     const prompt = buildSisyphusJuniorPrompt(model, false)

@@ -13,16 +13,7 @@ const OPENAI_ONLY_CATEGORY_OVERRIDES: Record<string, CategoryConfig> = {
 }
 
 export function isOpenAiOnlyAvailability(availability: ProviderAvailability): boolean {
-  return (
-    availability.native.openai &&
-    !availability.native.claude &&
-    !availability.native.gemini &&
-    !availability.opencodeGo &&
-    !availability.opencodeZen &&
-    !availability.copilot &&
-    !availability.zai &&
-    !availability.kimiForCoding
-  )
+  return availability.native.openai && !availability.vercelAiGateway
 }
 
 export function applyOpenAiOnlyModelCatalog(config: GeneratedOmoConfig): GeneratedOmoConfig {

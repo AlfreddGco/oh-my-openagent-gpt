@@ -88,7 +88,7 @@ beforeEach(async () => {
   spyOn(mcpModule, "createBuiltinMcps" as any).mockReturnValue({})
 
   spyOn(shared, "log" as any).mockImplementation(() => {})
-  spyOn(shared, "fetchAvailableModels" as any).mockResolvedValue(new Set(["anthropic/claude-opus-4-7"]))
+  spyOn(shared, "fetchAvailableModels" as any).mockResolvedValue(new Set(["openai/gpt-5.5"]))
   spyOn(shared, "readConnectedProvidersCache" as any).mockReturnValue(null)
 
   spyOn(configDir, "getOpenCodeConfigPaths" as any).mockReturnValue({
@@ -98,7 +98,7 @@ beforeEach(async () => {
 
   spyOn(permissionCompat, "migrateAgentConfig" as any).mockImplementation((config: Record<string, unknown>) => config)
 
-  spyOn(modelResolver, "resolveModelWithFallback" as any).mockReturnValue({ model: "anthropic/claude-opus-4-7" })
+  spyOn(modelResolver, "resolveModelWithFallback" as any).mockReturnValue({ model: "openai/gpt-5.5" })
   ;({ createConfigHandler } = await importFreshConfigHandlerModule())
 })
 
@@ -142,7 +142,7 @@ describe("Sisyphus-Junior model inheritance", () => {
     // #given
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "opencode/kimi-k2.5-free",
+      model: "vercel/moonshotai/kimi-k2.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -174,7 +174,7 @@ describe("Sisyphus-Junior model inheritance", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "opencode/kimi-k2.5-free",
+      model: "vercel/moonshotai/kimi-k2.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -204,7 +204,7 @@ describe("MCP env allowlist initialization", () => {
       mcp_env_allowlist: ["CUSTOM_API_KEY", "CUSTOM_AUTH_TOKEN"],
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -246,7 +246,7 @@ describe("Plan agent demote behavior", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -292,7 +292,7 @@ describe("Plan agent demote behavior", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -336,7 +336,7 @@ describe("Plan agent demote behavior", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -385,7 +385,7 @@ describe("Plan agent demote behavior", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {
         plan: {
           name: "plan",
@@ -422,7 +422,7 @@ describe("Plan agent demote behavior", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {
         plan: {
           name: "plan",
@@ -459,7 +459,7 @@ describe("Plan agent demote behavior", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {
         plan: {
           name: "plan",
@@ -496,7 +496,7 @@ describe("Plan agent demote behavior", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -532,7 +532,7 @@ describe("Agent permission defaults", () => {
     })
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -560,7 +560,7 @@ describe("default_agent behavior with Sisyphus orchestration", () => {
     // given
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       default_agent: "  hephaestus  ",
       agent: {},
     }
@@ -584,7 +584,7 @@ describe("default_agent behavior with Sisyphus orchestration", () => {
     // given
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       default_agent: "HePhAeStUs",
       agent: {},
     }
@@ -608,7 +608,7 @@ describe("default_agent behavior with Sisyphus orchestration", () => {
     // #given
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       default_agent: "hephaestus",
       agent: {},
     }
@@ -633,7 +633,7 @@ describe("default_agent behavior with Sisyphus orchestration", () => {
     const pluginConfig = createPluginConfig({})
     const displayName = getAgentListDisplayName("hephaestus")
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       default_agent: displayName,
       agent: {},
     }
@@ -657,7 +657,7 @@ describe("default_agent behavior with Sisyphus orchestration", () => {
     // #given
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -680,7 +680,7 @@ describe("default_agent behavior with Sisyphus orchestration", () => {
     // given
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       default_agent: "hephaestus",
       agent: {},
     }
@@ -704,7 +704,7 @@ describe("default_agent behavior with Sisyphus orchestration", () => {
     // given
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       default_agent: "    ",
       agent: {},
     }
@@ -728,7 +728,7 @@ describe("default_agent behavior with Sisyphus orchestration", () => {
     // given
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       default_agent: "  Custom Agent  ",
       agent: {},
     }
@@ -756,7 +756,7 @@ describe("default_agent behavior with Sisyphus orchestration", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       default_agent: "  HePhAeStUs  ",
       agent: {},
     }
@@ -800,7 +800,7 @@ describe("Prometheus category config resolution", () => {
 
     // then
     expect(config).toBeDefined()
-    expect(config?.model).toBe("google/gemini-3.1-pro")
+    expect(config?.model).toBe("vercel/google/gemini-3.1-pro-preview")
   })
 
   test("user categories override default categories", () => {
@@ -898,7 +898,7 @@ describe("Prometheus direct override priority over category", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -939,7 +939,7 @@ describe("Prometheus direct override priority over category", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -981,7 +981,7 @@ describe("Prometheus direct override priority over category", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1017,7 +1017,7 @@ describe("Prometheus direct override priority over category", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1046,7 +1046,7 @@ describe("Plan agent model inheritance from prometheus", () => {
   test("plan agent inherits all model-related settings from resolved prometheus config", async () => {
     //#given - prometheus resolves to claude-opus-4-7 with model settings
     spyOn(prometheusAgentConfigBuilder, "buildPrometheusAgentConfig").mockResolvedValue({
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       variant: "max",
       mode: "primary",
       prompt: "prometheus prompt",
@@ -1058,7 +1058,7 @@ describe("Plan agent model inheritance from prometheus", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {
         plan: {
           name: "plan",
@@ -1084,7 +1084,7 @@ describe("Plan agent model inheritance from prometheus", () => {
     const agents = config.agent as Record<string, { mode?: string; model?: string; variant?: string; prompt?: string }>
     expect(agents.plan).toBeDefined()
     expect(agents.plan.mode).toBe("subagent")
-    expect(agents.plan.model).toBe("anthropic/claude-opus-4-7")
+    expect(agents.plan.model).toBe("openai/gpt-5.5")
     expect(agents.plan.variant).toBe("max")
     expect(agents.plan.prompt).toBeUndefined()
   })
@@ -1115,7 +1115,7 @@ describe("Plan agent model inheritance from prometheus", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1147,7 +1147,7 @@ describe("Plan agent model inheritance from prometheus", () => {
   test("plan agent user override takes priority over prometheus inherited settings", async () => {
     //#given - prometheus resolves to opus, but user has plan override for gpt-5.4
     spyOn(shared, "resolveModelPipeline" as any).mockReturnValue({
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       provenance: "provider-fallback",
       variant: "max",
     })
@@ -1165,7 +1165,7 @@ describe("Plan agent model inheritance from prometheus", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1190,7 +1190,7 @@ describe("Plan agent model inheritance from prometheus", () => {
   test("plan agent does NOT inherit prompt, description, or color from prometheus", async () => {
     //#given
     spyOn(shared, "resolveModelPipeline" as any).mockReturnValue({
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       provenance: "provider-fallback",
       variant: "max",
     })
@@ -1201,7 +1201,7 @@ describe("Plan agent model inheritance from prometheus", () => {
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1218,7 +1218,7 @@ describe("Plan agent model inheritance from prometheus", () => {
 
     //#then - plan has model settings but NOT prompt/description/color
     const agents = config.agent as Record<string, Record<string, unknown>>
-    expect(agents.plan.model).toBe("anthropic/claude-opus-4-7")
+    expect(agents.plan.model).toBe("openai/gpt-5.5")
     expect(agents.plan.prompt).toBeUndefined()
     expect(agents.plan.description).toBeUndefined()
     expect(agents.plan.color).toBeUndefined()
@@ -1237,7 +1237,7 @@ describe("Deadlock prevention - fetchAvailableModels must not receive client", (
       },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const mockClient = {
@@ -1270,7 +1270,7 @@ describe("config-handler plugin loading error boundary (#1559)", () => {
     spyOn(pluginLoader, "loadAllPluginComponents" as any).mockRejectedValue(new Error("crash"))
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const { createConfigHandler: createFreshConfigHandler } = await importFreshConfigHandlerModule()
@@ -1300,7 +1300,7 @@ describe("config-handler plugin loading error boundary (#1559)", () => {
       experimental: { plugin_load_timeout_ms: 100 },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const { createConfigHandler: createFreshConfigHandler } = await importFreshConfigHandlerModule()
@@ -1326,7 +1326,7 @@ describe("config-handler plugin loading error boundary (#1559)", () => {
     spyOn(pluginLoader, "loadAllPluginComponents" as any).mockRejectedValue(new Error("crash"))
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const { createConfigHandler: createFreshConfigHandler } = await importFreshConfigHandlerModule()
@@ -1363,7 +1363,7 @@ describe("config-handler plugin loading error boundary (#1559)", () => {
     })
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const { createConfigHandler: createFreshConfigHandler } = await importFreshConfigHandlerModule()
@@ -1407,7 +1407,7 @@ describe("command agent routing coherence", () => {
     })
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1457,7 +1457,7 @@ describe("per-agent todowrite/todoread deny when task_system enabled", () => {
       experimental: { task_system: true },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1495,7 +1495,7 @@ describe("per-agent todowrite/todoread deny when task_system enabled", () => {
       experimental: { task_system: false },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1534,7 +1534,7 @@ describe("per-agent todowrite/todoread deny when task_system enabled", () => {
 
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1575,7 +1575,7 @@ describe("disable_omo_env pass-through", () => {
       experimental: { disable_omo_env: true },
     })
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1610,7 +1610,7 @@ describe("disable_omo_env pass-through", () => {
 
     const pluginConfig = createPluginConfig({})
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1654,7 +1654,7 @@ describe("Agent merge priority — project-local overrides global", () => {
 
     const pluginConfig: OhMyOpenCodeConfig = {}
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1694,7 +1694,7 @@ describe("Agent merge priority — project-local overrides global", () => {
 
     const pluginConfig: OhMyOpenCodeConfig = {}
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1734,7 +1734,7 @@ describe("Agent merge priority — project-local overrides global", () => {
 
     const pluginConfig: OhMyOpenCodeConfig = {}
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({
@@ -1782,7 +1782,7 @@ describe("Agent merge priority — project-local overrides global", () => {
 
     const pluginConfig: OhMyOpenCodeConfig = {}
     const config: Record<string, unknown> = {
-      model: "anthropic/claude-opus-4-7",
+      model: "openai/gpt-5.5",
       agent: {},
     }
     const handler = createConfigHandler({

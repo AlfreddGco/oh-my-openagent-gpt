@@ -7,7 +7,7 @@
  * Routing:
  * 1. GPT models (openai/*, github-copilot/gpt-*) -> gpt.ts (GPT-5.4 optimized)
  * 2. Gemini models (google/*, google-vertex/*) -> gemini.ts (Gemini-optimized)
- * 3. Default (Claude, etc.) -> default.ts (Claude-optimized)
+ * 3. Default (legacy non-GPT models) -> default.ts (legacy prompt)
  */
 
 import type { AgentConfig } from "@opencode-ai/sdk"
@@ -35,7 +35,7 @@ const BLOCKED_TOOLS = ["task"]
 const GPT_BLOCKED_TOOLS = ["task", "apply_patch"]
 
 export const SISYPHUS_JUNIOR_DEFAULTS = {
-  model: "anthropic/claude-sonnet-4-6",
+  model: "openai/gpt-5.5",
   temperature: 0.1,
 } as const
 

@@ -19,7 +19,8 @@ describe("model-capability-guardrails", () => {
 
     expect(modelIDs).toEqual([...modelIDs].sort())
     expect(new Set(modelIDs).size).toBe(modelIDs.length)
-    expect(modelIDs).toContain("claude-opus-4-7")
+    expect(modelIDs).not.toContain("claude-opus-4-7")
+    expect(modelIDs).toContain("gemini-3.1-pro")
     expect(modelIDs).toContain("gpt-5.5")
     expect(modelIDs).toContain("kimi-k2.5")
   })

@@ -43,13 +43,13 @@ Examples:
   $ bunx ${PUBLISHED_PACKAGE_NAME} install --no-tui --claude=no --gemini=no --copilot=yes --opencode-zen=yes
 
 Model Providers (Priority: Native > Copilot > OpenCode Zen > Z.ai > Kimi > Vercel):
-  Claude        Native anthropic/ models (Opus, Sonnet, Haiku)
-  OpenAI        Native openai/ models (GPT-5.4 for Oracle)
+  Claude        Native provider availability, rewritten to OpenAI-equivalent defaults
+  OpenAI        Native openai/ models (GPT-5.5, GPT-5.4-mini)
   Gemini        Native google/ models (Gemini 3.1 Pro, Flash)
   Copilot       github-copilot/ models (fallback)
-  OpenCode Zen  opencode/ models (opencode/claude-opus-4-7, etc.)
-  Z.ai          zai-coding-plan/glm-5 (visual-engineering fallback)
-  Kimi          kimi-for-coding/k2p5 (Sisyphus/Prometheus fallback)
+  OpenCode Zen  opencode/ models (opencode/gpt-5.5, etc.)
+  Z.ai          vercel/zai/glm-5 (fallback via Vercel)
+  Kimi          vercel/k2p5 (fallback via Vercel)
   Vercel        vercel/ models (universal proxy, always last fallback)
 `)
   .action(async (options) => {
@@ -76,7 +76,7 @@ program
    .passThroughOptions()
   .description("Run opencode with todo/background task completion enforcement")
   .option("-a, --agent <name>", "Agent to use (default: from CLI/env/config, fallback: Sisyphus)")
-  .option("-m, --model <provider/model>", "Model override (e.g., anthropic/claude-sonnet-4)")
+   .option("-m, --model <provider/model>", "Model override (e.g., openai/gpt-5.5)")
   .option("-d, --directory <path>", "Working directory")
   .option("-p, --port <port>", "Server port (attaches if port already in use)", parseInt)
   .option("--attach <url>", "Attach to existing opencode server URL")
@@ -94,7 +94,7 @@ Examples:
   $ bunx ${PUBLISHED_PACKAGE_NAME} run --json "Fix the bug" | jq .sessionId
   $ bunx ${PUBLISHED_PACKAGE_NAME} run --on-complete "notify-send Done" "Fix the bug"
   $ bunx ${PUBLISHED_PACKAGE_NAME} run --session-id ses_abc123 "Continue the work"
-  $ bunx ${PUBLISHED_PACKAGE_NAME} run --model anthropic/claude-sonnet-4 "Fix the bug"
+  $ bunx ${PUBLISHED_PACKAGE_NAME} run --model openai/gpt-5.5 "Fix the bug"
   $ bunx ${PUBLISHED_PACKAGE_NAME} run --agent Sisyphus --model openai/gpt-5.5 "Implement feature X"
 
 Agent resolution order:

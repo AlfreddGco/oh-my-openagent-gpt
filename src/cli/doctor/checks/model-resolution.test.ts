@@ -55,8 +55,9 @@ describe("model-resolution check", () => {
       // then: Should have agent entries
       const sisyphus = info.agents.find((a) => a.name === "sisyphus")
       expect(sisyphus).toBeDefined()
-      expect(sisyphus!.requirement.fallbackChain[0]?.model).toBe("claude-opus-4-7")
-      expect(sisyphus!.requirement.fallbackChain[0]?.providers).toContain("anthropic")
+      expect(sisyphus!.requirement.fallbackChain[0]?.model).toBe("gpt-5.5")
+      expect(sisyphus!.requirement.fallbackChain[0]?.variant).toBe("xhigh")
+      expect(sisyphus!.requirement.fallbackChain[0]?.providers).toEqual(["openai"])
     })
 
     it("returns category requirements with provider chains", async () => {
@@ -68,7 +69,7 @@ describe("model-resolution check", () => {
       const visual = info.categories.find((c) => c.name === "visual-engineering")
       expect(visual).toBeDefined()
       expect(visual!.requirement.fallbackChain[0]?.model).toBe("gemini-3.1-pro")
-      expect(visual!.requirement.fallbackChain[0]?.providers).toContain("google")
+      expect(visual!.requirement.fallbackChain[0]?.providers).toEqual(["vercel"])
     })
   })
 
@@ -83,7 +84,7 @@ describe("model-resolution check", () => {
       // given: User has override for oracle agent
       const mockConfig = {
         agents: {
-          oracle: { model: "anthropic/claude-opus-4-7" },
+          oracle: { model: "openai/gpt-5.5" },
         },
       }
 
@@ -92,8 +93,8 @@ describe("model-resolution check", () => {
       // then: Oracle should show the override
       const oracle = info.agents.find((a) => a.name === "oracle")
       expect(oracle).toBeDefined()
-      expect(oracle!.userOverride).toBe("anthropic/claude-opus-4-7")
-      expect(oracle!.effectiveResolution).toBe("User override: anthropic/claude-opus-4-7")
+      expect(oracle!.userOverride).toBe("openai/gpt-5.5")
+      expect(oracle!.effectiveResolution).toBe("User override: openai/gpt-5.5")
     })
 
     it("shows user override for category when configured", async () => {
@@ -128,7 +129,8 @@ describe("model-resolution check", () => {
       expect(sisyphus).toBeDefined()
       expect(sisyphus!.userOverride).toBeUndefined()
       expect(sisyphus!.effectiveResolution).toContain("Provider fallback:")
-      expect(sisyphus!.effectiveResolution).toContain("anthropic")
+      expect(sisyphus!.effectiveResolution).toContain("openai")
+      expect(sisyphus!.effectiveResolution).toContain("gpt-5.5")
     })
 
     it("captures user variant for agent when configured", async () => {
@@ -157,7 +159,7 @@ describe("model-resolution check", () => {
       //#given User has model with variant override for visual-engineering category
       const mockConfig = {
         categories: {
-          "visual-engineering": { model: "google/gemini-3-flash-preview", variant: "high" },
+          "visual-engineering": { model: "vercel/google/gemini-3-flash", variant: "high" },
         },
       }
 
@@ -167,7 +169,7 @@ describe("model-resolution check", () => {
       //#then visual-engineering should have userVariant set
       const visual = info.categories.find((c) => c.name === "visual-engineering")
       expect(visual).toBeDefined()
-      expect(visual!.userOverride).toBe("google/gemini-3-flash-preview")
+      expect(visual!.userOverride).toBe("vercel/google/gemini-3-flash")
       expect(visual!.userVariant).toBe("high")
     })
 
@@ -189,13 +191,13 @@ describe("model-resolution check", () => {
 
       const info = getModelResolutionInfoWithOverrides({
         categories: {
-          "visual-engineering": { model: "google/gemini-3.1-pro-high" },
+          "visual-engineering": { model: "vercel/google/gemini-3.1-pro-high" },
         },
       })
 
       const visual = info.categories.find((category) => category.name === "visual-engineering")
       expect(visual).toBeDefined()
-      expect(visual!.effectiveModel).toBe("google/gemini-3.1-pro-high")
+      expect(visual!.effectiveModel).toBe("vercel/google/gemini-3.1-pro-high")
       expect(visual!.capabilityDiagnostics).toMatchObject({
         resolutionMode: "alias-backed",
         canonicalization: {
@@ -205,24 +207,20 @@ describe("model-resolution check", () => {
       })
     })
 
-    it("keeps provider-prefixed Claude overrides for transport while capability diagnostics canonicalize to bare IDs", async () => {
+    it("keeps current GPT overrides verbatim while capability diagnostics stay snapshot-backed", async () => {
       const { getModelResolutionInfoWithOverrides } = await import("./model-resolution")
 
       const info = getModelResolutionInfoWithOverrides({
         agents: {
-          oracle: { model: "anthropic/claude-opus-4-7-thinking" },
+          oracle: { model: "openai/gpt-5.5" },
         },
       })
 
       const oracle = info.agents.find((agent) => agent.name === "oracle")
       expect(oracle).toBeDefined()
-      expect(oracle!.effectiveModel).toBe("anthropic/claude-opus-4-7-thinking")
+      expect(oracle!.effectiveModel).toBe("openai/gpt-5.5")
       expect(oracle!.capabilityDiagnostics).toMatchObject({
-        resolutionMode: "alias-backed",
-        canonicalization: {
-          source: "pattern-alias",
-          ruleID: "claude-thinking-legacy-alias",
-        },
+        resolutionMode: "snapshot-backed",
       })
     })
   })
@@ -277,25 +275,25 @@ describe("model-resolution check", () => {
       expect(issues[0]?.description).toContain("oracle=custom/unknown-llm")
     })
 
-    it("does not warn for known provider aliases used by current recommended models", async () => {
+    it("does not warn for current recommended openai and vercel models", async () => {
       const { collectCapabilityResolutionIssues, getModelResolutionInfoWithOverrides } = await import("./model-resolution")
 
-      // #given current recommended provider aliases from user configuration
+      // #given current recommended provider models from user configuration
       const info = getModelResolutionInfoWithOverrides({
         agents: {
-          sisyphus: { model: "kimi-for-coding/k2pb" },
-          metis: { model: "github-copilot/claude-opus-4.7" },
+          sisyphus: { model: "openai/gpt-5.5" },
+          metis: { model: "openai/gpt-5.5" },
         },
         categories: {
-          "visual-engineering": { model: "github-copilot/claude-opus-4.7" },
-          artistry: { model: "github-copilot/claude-opus-4.7" },
+          "visual-engineering": { model: "vercel/google/gemini-3.1-pro-preview" },
+          artistry: { model: "vercel/google/gemini-3.1-pro-preview" },
         },
       })
 
       // #when collecting doctor capability issues
       const issues = collectCapabilityResolutionIssues(info)
 
-      // #then these known aliases do not create compatibility fallback warnings
+      // #then these recommended models do not create compatibility fallback warnings
       expect(issues).toHaveLength(0)
     })
   })

@@ -109,13 +109,13 @@ Approach:
 export const GOOGLE_CATEGORIES: BuiltinCategoryDefinition[] = [
   {
     name: "visual-engineering",
-    config: { model: "google/gemini-3.1-pro", variant: "high" },
+    config: { model: "vercel/google/gemini-3.1-pro-preview", variant: "high" },
     description: "Frontend, UI/UX, design, styling, animation",
     promptAppend: VISUAL_CATEGORY_PROMPT_APPEND,
   },
   {
     name: "artistry",
-    config: { model: "google/gemini-3.1-pro", variant: "high" },
+    config: { model: "vercel/google/gemini-3.1-pro-preview", variant: "high" },
     description: "Complex problem-solving with unconventional, creative approaches - beyond standard patterns",
     promptAppend: ARTISTRY_CATEGORY_PROMPT_APPEND,
   },

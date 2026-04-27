@@ -32,7 +32,7 @@ export async function promptInstallConfig(detected: DetectedConfig): Promise<Ins
   const claude = await selectOrCancel<ClaudeSubscription>({
     message: "Do you have a Claude Pro/Max subscription?",
     options: [
-      { value: "no", label: "No", hint: "Will use opencode/big-pickle as fallback" },
+      { value: "no", label: "No", hint: "Will use openai/gpt-5-nano as fallback" },
       { value: "yes", label: "Yes (standard)", hint: "Claude Opus 4.5 for orchestration" },
       { value: "max20", label: "Yes (max20 mode)", hint: "Full power with Claude Sonnet 4.6 for Librarian" },
     ],
@@ -74,7 +74,7 @@ export async function promptInstallConfig(detected: DetectedConfig): Promise<Ins
     message: "Do you have access to OpenCode Zen (opencode/ models)?",
     options: [
       { value: "no", label: "No", hint: "Will use other configured providers" },
-      { value: "yes", label: "Yes", hint: "opencode/claude-opus-4-7, opencode/gpt-5.5, etc." },
+      { value: "yes", label: "Yes", hint: "opencode/gpt-5.5, opencode/gpt-5-nano, etc." },
     ],
     initialValue: initial.opencodeZen,
   })

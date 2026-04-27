@@ -2,17 +2,16 @@ import type { FallbackModelObject } from "../config/schema/fallback-models"
 
 export interface ProviderAvailability {
 	native: {
-		claude: boolean
-		openai: boolean
-		gemini: boolean
-	}
-	opencodeZen: boolean
-	copilot: boolean
-	zai: boolean
-kimiForCoding: boolean
-	opencodeGo: boolean
-	vercelAiGateway: boolean
-	isMaxPlan: boolean
+		openai: boolean;
+		gemini: boolean;
+	};
+	opencodeZen: boolean;
+	copilot: boolean;
+	zai: boolean;
+	kimiForCoding: boolean;
+	opencodeGo: boolean;
+	vercelAiGateway: boolean;
+	isMaxPlan: boolean;
 }
 
 export interface AgentConfig {
