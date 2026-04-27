@@ -30,6 +30,8 @@ export const OverridableAgentNameSchema = z.enum([
   "sisyphus",
   "hephaestus",
   "sisyphus-junior",
+  "builder",
+  "Builder",
   "OpenCode-Builder",
   "prometheus",
   "metis",

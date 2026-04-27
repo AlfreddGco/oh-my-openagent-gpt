@@ -68,6 +68,17 @@ describe("getAgentDisplayName", () => {
     expect(result).toBe("Sisyphus-Junior")
   })
 
+  it("returns display name for builder", () => {
+    // given config key "builder"
+    const configKey = "builder"
+
+    // when getAgentDisplayName called
+    const result = getAgentDisplayName(configKey)
+
+    // then returns "Builder"
+    expect(result).toBe("Builder")
+  })
+
   it("returns display name for metis", () => {
     // given config key "metis"
     const configKey = "metis"
@@ -181,6 +192,8 @@ describe("getAgentConfigKey", () => {
     expect(getAgentConfigKey("Metis - Plan Consultant")).toBe("metis")
     expect(getAgentConfigKey("Momus - Plan Critic")).toBe("momus")
     expect(getAgentConfigKey("Sisyphus-Junior")).toBe("sisyphus-junior")
+    expect(getAgentConfigKey("Builder")).toBe("builder")
+    expect(getAgentConfigKey("OpenCode-Builder")).toBe("builder")
   })
 
   it("resolves atlas even when the UI ordering prefix is present", () => {
@@ -199,6 +212,7 @@ describe("getAgentListDisplayName", () => {
     expect(getAgentListDisplayName("hephaestus")).toBe("Hephaestus - Deep Agent")
     expect(getAgentListDisplayName("prometheus")).toBe("Prometheus - Plan Builder")
     expect(getAgentListDisplayName("atlas")).toBe("Atlas - Plan Executor")
+    expect(getAgentListDisplayName("builder")).toBe("Builder")
   })
 
   it("keeps non-core agents unchanged for list display", () => {
@@ -231,6 +245,10 @@ describe("normalizeAgentForPrompt", () => {
   it("converts legacy parenthesized names to canonical display names", () => {
     expect(normalizeAgentForPrompt("Atlas (Plan Executor)")).toBe("Atlas - Plan Executor")
   })
+
+  it("converts legacy OpenCode builder name to canonical display name", () => {
+    expect(normalizeAgentForPrompt("OpenCode-Builder")).toBe("Builder")
+  })
 })
 
 describe("normalizeAgentForPromptKey", () => {
@@ -256,6 +274,7 @@ describe("AGENT_DISPLAY_NAMES", () => {
       prometheus: "Prometheus - Plan Builder",
       atlas: "Atlas - Plan Executor",
       "sisyphus-junior": "Sisyphus-Junior",
+      builder: "Builder",
       metis: "Metis - Plan Consultant",
       momus: "Momus - Plan Critic",
       athena: "Athena - Council",

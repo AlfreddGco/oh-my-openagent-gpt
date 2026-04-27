@@ -41,6 +41,10 @@ export const AGENT_NAME_MAP: Record<string, string> = {
 
   // Already lowercase - passthrough
   build: "build",
+  builder: "builder",
+  Builder: "builder",
+  "opencode-builder": "builder",
+  "OpenCode-Builder": "builder",
   oracle: "oracle",
   librarian: "librarian",
   explore: "explore",

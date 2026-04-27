@@ -15,6 +15,7 @@ export const AGENT_DISPLAY_NAMES: Record<string, string> = {
   prometheus: "Prometheus - Plan Builder",
   atlas: "Atlas - Plan Executor",
   "sisyphus-junior": "Sisyphus-Junior",
+  builder: "Builder",
   metis: "Metis - Plan Consultant",
   momus: "Momus - Plan Critic",
   athena: "Athena - Council",
@@ -26,7 +27,7 @@ export const AGENT_DISPLAY_NAMES: Record<string, string> = {
   "council-member": "council-member",
 }
 
-const INVISIBLE_AGENT_CHARACTERS_REGEX = /[\u200B\u200C\u200D\uFEFF]/g
+const INVISIBLE_AGENT_CHARACTERS_REGEX = /\u200B|\u200C|\u200D|\uFEFF/g
 
 export function stripInvisibleAgentCharacters(agentName: string): string {
   return agentName.replace(INVISIBLE_AGENT_CHARACTERS_REGEX, "")
@@ -84,6 +85,7 @@ const LEGACY_DISPLAY_NAMES: Record<string, string> = {
   "momus (plan critic)": "momus",
   "athena (council)": "athena",
   "athena-junior (council)": "athena-junior",
+  "opencode-builder": "builder",
 }
 
 function resolveKnownAgentConfigKey(agentName: string): string | undefined {
