@@ -417,7 +417,7 @@ Configure the main orchestration system.
 {
   "sisyphus_agent": {
     "disabled": false,
-    "default_builder_enabled": false,
+    "default_builder_enabled": true,
     "planner_enabled": true,
     "replace_plan": true
   }
@@ -427,11 +427,11 @@ Configure the main orchestration system.
 | Option                    | Default | Description                                                     |
 | ------------------------- | ------- | --------------------------------------------------------------- |
 | `disabled`                | `false` | Disable all Sisyphus orchestration, restore original build/plan |
-| `default_builder_enabled` | `false` | Enable OpenCode-Builder agent (off by default)                  |
+| `default_builder_enabled` | `true`  | Keep Builder available alongside Sisyphus                       |
 | `planner_enabled`         | `true`  | Enable Prometheus (Planner) agent                               |
 | `replace_plan`            | `true`  | Demote default plan agent to subagent mode                      |
 
-Sisyphus agents can also be customized under `agents` using their names: `Sisyphus`, `OpenCode-Builder`, `Prometheus (Planner)`, `Metis (Plan Consultant)`.
+Sisyphus agents can also be customized under `agents` using their names: `Sisyphus`, `Builder`, `Prometheus (Planner)`, `Metis (Plan Consultant)`. Legacy `OpenCode-Builder` overrides are still accepted.
 
 ### Sisyphus Tasks
 

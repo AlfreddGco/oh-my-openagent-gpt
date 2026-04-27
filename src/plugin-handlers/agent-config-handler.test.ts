@@ -241,6 +241,82 @@ describe("applyAgentConfig builtin override protection", () => {
     expect(config.default_agent).toBe(getAgentDisplayName("sisyphus"))
   })
 
+  test("keeps OpenCode builder available by default when Sisyphus is enabled", async () => {
+    // given
+    const config = createBaseConfig()
+    ;(config as Record<string, unknown>).agent = {
+      build: {
+        name: "build",
+        prompt: "default build prompt",
+        description: "OpenCode build agent",
+        mode: "primary",
+      },
+    }
+
+    // when
+    const result = await applyAgentConfig({
+      config,
+      pluginConfig: createPluginConfig(),
+      ctx: { directory: "/tmp" },
+      pluginComponents: createPluginComponents(),
+    })
+
+    // then
+    const builder = result.Builder as Record<string, unknown>
+    expect(builder).toBeDefined()
+    expect(builder.prompt).toBe("default build prompt")
+    expect(builder.description).toBe("OpenCode build agent (OpenCode default)")
+    expect(builder.hidden).toBeUndefined()
+    expect(config.default_agent).toBe(getAgentDisplayName("sisyphus"))
+
+    const hiddenBuild = result.build as Record<string, unknown>
+    expect(hiddenBuild.hidden).toBe(true)
+  })
+
+  test("honors explicit OpenCode builder opt-out", async () => {
+    // given
+    const pluginConfig = createPluginConfig()
+    pluginConfig.sisyphus_agent = {
+      ...pluginConfig.sisyphus_agent,
+      default_builder_enabled: false,
+    }
+
+    // when
+    const result = await applyAgentConfig({
+      config: createBaseConfig(),
+      pluginConfig,
+      ctx: { directory: "/tmp" },
+      pluginComponents: createPluginComponents(),
+    })
+
+    // then
+    expect(result.Builder).toBeUndefined()
+  })
+
+  test("applies legacy OpenCode-Builder overrides to the visible Builder agent", async () => {
+    // given
+    const pluginConfig = createPluginConfig()
+    pluginConfig.agents = {
+      "OpenCode-Builder": {
+        description: "Legacy override description",
+      },
+    }
+
+    // when
+    const result = await applyAgentConfig({
+      config: createBaseConfig(),
+      pluginConfig,
+      ctx: { directory: "/tmp" },
+      pluginComponents: createPluginComponents(),
+    })
+
+    // then
+    const builder = result.Builder as Record<string, unknown>
+    expect(builder).toBeDefined()
+    expect(builder.description).toBe("Legacy override description")
+    expect(result["OpenCode-Builder"]).toBeUndefined()
+  })
+
   test("resolved default_agent contains no zero-width invisible characters", async () => {
     // given canonical core ordering is now enforced by the agent sort shim, so
     // default_agent must not carry the legacy ZWSP prefix that earlier biased
@@ -256,7 +332,7 @@ describe("applyAgentConfig builtin override protection", () => {
     })
 
     // then the persisted default_agent is the clean display name
-    expect(config.default_agent).not.toMatch(/[\u200B\u200C\u200D\uFEFF]/)
+    expect(config.default_agent).not.toMatch(/\u200B|\u200C|\u200D|\uFEFF/)
   })
 
   test("filters user agents whose key matches the builtin display-name alias", async () => {

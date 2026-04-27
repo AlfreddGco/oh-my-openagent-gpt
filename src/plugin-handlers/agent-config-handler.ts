@@ -185,7 +185,7 @@ export async function applyAgentConfig(params: {
 
   const isSisyphusEnabled = params.pluginConfig.sisyphus_agent?.disabled !== true;
   const builderEnabled =
-    params.pluginConfig.sisyphus_agent?.default_builder_enabled ?? false;
+    params.pluginConfig.sisyphus_agent?.default_builder_enabled ?? true;
   const plannerEnabled = params.pluginConfig.sisyphus_agent?.planner_enabled ?? true;
   const replacePlan = params.pluginConfig.sisyphus_agent?.replace_plan ?? true;
   const shouldDemotePlan = plannerEnabled && replacePlan;
@@ -241,12 +241,15 @@ export async function applyAgentConfig(params: {
       const migratedBuildConfig = migrateAgentConfig(
         buildConfigWithoutName as Record<string, unknown>,
       );
-      const override = params.pluginConfig.agents?.["OpenCode-Builder"];
+      const override =
+        params.pluginConfig.agents?.builder ??
+        params.pluginConfig.agents?.Builder ??
+        params.pluginConfig.agents?.["OpenCode-Builder"];
       const base = {
         ...migratedBuildConfig,
         description: `${(configAgent?.build?.description as string) ?? "Build agent"} (OpenCode default)`,
       };
-      agentConfig["OpenCode-Builder"] = override ? { ...base, ...override } : base;
+      agentConfig.builder = override ? { ...base, ...override } : base;
     }
 
     const filteredConfigAgents = configAgent
