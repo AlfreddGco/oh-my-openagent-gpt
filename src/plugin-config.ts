@@ -303,6 +303,12 @@ export function loadPluginConfig(
     mcp_env_allowlist: userConfig?.mcp_env_allowlist ?? [],
   };
 
+  // Disable Anthropic-specific hooks by default
+  config.disabled_hooks = [
+    "anthropic-context-window-limit-recovery",
+    "anthropic-effort"
+  ];
+
   log("Final merged config", {
     agents: config.agents,
     disabled_agents: config.disabled_agents,
