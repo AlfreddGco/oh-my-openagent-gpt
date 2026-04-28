@@ -14,6 +14,10 @@ mock.module("./plugin-entry-migrator.ts", () => ({
 
 const autoMigrateModulePromise = import("./auto-migrate")
 
+function stringifyConfig(config: unknown): string {
+  return `${JSON.stringify(config, null, 2)}\n`
+}
+
 describe("autoMigrateLegacyPluginEntry", () => {
   let testConfigDir = ""
 
@@ -29,11 +33,11 @@ describe("autoMigrateLegacyPluginEntry", () => {
   })
 
   describe("#given opencode.json has a bare legacy plugin entry", () => {
-    it("#then replaces oh-my-opencode with oh-my-openagent", async () => {
+    it("#then replaces oh-my-opencode with oh-my-openagent-gpt", async () => {
       // given
       writeFileSync(
         join(testConfigDir, "opencode.json"),
-        JSON.stringify({ plugin: ["oh-my-opencode"] }, null, 2) + "\n",
+        stringifyConfig({ plugin: ["oh-my-opencode"] }),
       )
 
       const { autoMigrateLegacyPluginEntry } = await autoMigrateModulePromise
@@ -44,7 +48,7 @@ describe("autoMigrateLegacyPluginEntry", () => {
       // then
       expect(result.migrated).toBe(true)
       expect(result.from).toBe("oh-my-opencode")
-      expect(result.to).toBe("oh-my-openagent")
+      expect(result.to).toBe("oh-my-openagent-gpt")
       expect(mockMigrateLegacyPluginEntry).toHaveBeenCalledWith(join(testConfigDir, "opencode.json"))
     })
   })
@@ -54,7 +58,7 @@ describe("autoMigrateLegacyPluginEntry", () => {
       // given
       writeFileSync(
         join(testConfigDir, "opencode.json"),
-        JSON.stringify({ plugin: ["oh-my-opencode@3.10.0"] }, null, 2) + "\n",
+        stringifyConfig({ plugin: ["oh-my-opencode@3.10.0"] }),
       )
 
       const { autoMigrateLegacyPluginEntry } = await autoMigrateModulePromise
@@ -65,17 +69,17 @@ describe("autoMigrateLegacyPluginEntry", () => {
       // then
       expect(result.migrated).toBe(true)
       expect(result.from).toBe("oh-my-opencode@3.10.0")
-      expect(result.to).toBe("oh-my-openagent@3.10.0")
+      expect(result.to).toBe("oh-my-openagent-gpt@3.10.0")
       expect(mockMigrateLegacyPluginEntry).toHaveBeenCalledWith(join(testConfigDir, "opencode.json"))
     })
   })
 
-  describe("#given both canonical and legacy entries exist", () => {
-    it("#then removes legacy entry and keeps canonical", async () => {
+  describe("#given opencode.json has a package-name plugin entry", () => {
+    it("#then replaces it with oh-my-openagent-gpt", async () => {
       // given
       writeFileSync(
         join(testConfigDir, "opencode.json"),
-        JSON.stringify({ plugin: ["oh-my-openagent", "oh-my-opencode"] }, null, 2) + "\n",
+        stringifyConfig({ plugin: ["oh-my-opencode-gpt@latest"] }),
       )
 
       const { autoMigrateLegacyPluginEntry } = await autoMigrateModulePromise
@@ -85,7 +89,28 @@ describe("autoMigrateLegacyPluginEntry", () => {
 
       // then
       expect(result.migrated).toBe(true)
-      expect(result.to).toBe("oh-my-openagent")
+      expect(result.from).toBe("oh-my-opencode-gpt@latest")
+      expect(result.to).toBe("oh-my-openagent-gpt@latest")
+      expect(mockMigrateLegacyPluginEntry).toHaveBeenCalledWith(join(testConfigDir, "opencode.json"))
+    })
+  })
+
+  describe("#given both canonical and legacy entries exist", () => {
+    it("#then removes legacy entry and keeps canonical", async () => {
+      // given
+      writeFileSync(
+        join(testConfigDir, "opencode.json"),
+        stringifyConfig({ plugin: ["oh-my-openagent-gpt", "oh-my-opencode"] }),
+      )
+
+      const { autoMigrateLegacyPluginEntry } = await autoMigrateModulePromise
+
+      // when
+      const result = autoMigrateLegacyPluginEntry(testConfigDir)
+
+      // then
+      expect(result.migrated).toBe(true)
+      expect(result.to).toBe("oh-my-openagent-gpt")
       expect(mockMigrateLegacyPluginEntry).toHaveBeenCalledWith(join(testConfigDir, "opencode.json"))
     })
   })
@@ -120,7 +145,7 @@ describe("autoMigrateLegacyPluginEntry", () => {
 
       // then
       expect(result.migrated).toBe(true)
-      expect(result.to).toBe("oh-my-openagent")
+      expect(result.to).toBe("oh-my-openagent-gpt")
       expect(mockMigrateLegacyPluginEntry).toHaveBeenCalledWith(join(testConfigDir, "opencode.jsonc"))
     })
   })
@@ -147,7 +172,7 @@ describe("autoMigrateLegacyPluginEntry", () => {
       // then
       expect(result.migrated).toBe(true)
       expect(result.from).toBe("oh-my-opencode@latest")
-      expect(result.to).toBe("oh-my-openagent@latest")
+      expect(result.to).toBe("oh-my-openagent-gpt@latest")
       expect(mockMigrateLegacyPluginEntry).toHaveBeenCalledWith(join(testConfigDir, "opencode.jsonc"))
     })
   })
@@ -155,7 +180,7 @@ describe("autoMigrateLegacyPluginEntry", () => {
   describe("#given only canonical entry exists", () => {
     it("#then returns migrated false and leaves file untouched", async () => {
       // given
-      const original = JSON.stringify({ plugin: ["oh-my-openagent"] }, null, 2) + "\n"
+      const original = stringifyConfig({ plugin: ["oh-my-openagent-gpt"] })
       writeFileSync(join(testConfigDir, "opencode.json"), original)
 
       const { autoMigrateLegacyPluginEntry } = await autoMigrateModulePromise

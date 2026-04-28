@@ -38,14 +38,14 @@ describe("config check", () => {
         mkdirSync(testConfigDir, { recursive: true })
         process.env.OPENCODE_CONFIG_DIR = testConfigDir
         writeFileSync(
-          join(testConfigDir, "oh-my-openagent.json"),
+          join(testConfigDir, "oh-my-openagent-gpt.json"),
           JSON.stringify({ disabled_hooks: ["comment-checker"] }, null, 2) + "\n",
           "utf-8",
         )
 
         const result = await config.checkConfig()
 
-        expect(result.details?.[0]).toEndWith("/oh-my-openagent.json")
+        expect(result.details?.[0]).toEndWith("/oh-my-openagent-gpt.json")
       } finally {
         rmSync(testConfigDir, { recursive: true, force: true })
         if (originalConfigDir === undefined) {

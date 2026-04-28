@@ -68,7 +68,7 @@ function getSharedProperties(source: PostHogSource): NonNullable<PostHogCaptureE
   const cpus = safeCpus()
 
   return {
-    platform: "oh-my-opencode",
+    platform: PUBLISHED_PACKAGE_NAME,
     package_name: PUBLISHED_PACKAGE_NAME,
     plugin_name: PLUGIN_NAME,
     package_version: packageJson.version,

@@ -71,14 +71,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-bun-
 
-      # Build local oh-my-opencode
-      - name: Build oh-my-opencode
+      # Build local oh-my-opencode-gpt
+      - name: Build oh-my-opencode-gpt
         run: |
           bun install
           bun run build
 
       # Install OpenCode + configure local plugin + auth in single step
-      - name: Setup OpenCode with oh-my-opencode
+      - name: Setup OpenCode with oh-my-openagent-gpt
         env:
           OPENCODE_AUTH_JSON: ${{ secrets.OPENCODE_AUTH_JSON }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
@@ -104,14 +104,15 @@ jobs:
           fi
           opencode --version
 
-          # Run local oh-my-opencode install (uses built dist)
+          # Run local oh-my-opencode-gpt install (uses built dist)
           bun run dist/cli/index.js install --no-tui --claude=max20 --openai=no --gemini=no --copilot=no
 
           # Override plugin to use local file reference
           OPENCODE_JSON=~/.config/opencode/opencode.json
           REPO_PATH=$(pwd)
           jq --arg path "file://$REPO_PATH/src/index.ts" '
-            .plugin = [.plugin[] | select(. != "oh-my-opencode")] + [$path]
+            def our_plugin($name): . == $name or startswith($name + "@");
+            .plugin = [(.plugin // [])[] | select((our_plugin("oh-my-openagent-gpt") or our_plugin("oh-my-opencode-gpt") or our_plugin("oh-my-opencode") or our_plugin("oh-my-openagent")) | not)] + [$path]
           ' "$OPENCODE_JSON" > /tmp/oc.json && mv /tmp/oc.json "$OPENCODE_JSON"
 
           OPENCODE_JSON=~/.config/opencode/opencode.json
@@ -192,7 +193,7 @@ jobs:
             }
           ' "$OPENCODE_JSON" > /tmp/oc.json && mv /tmp/oc.json "$OPENCODE_JSON"
 
-          OMO_JSON=~/.config/opencode/oh-my-opencode.json
+          OMO_JSON=~/.config/opencode/oh-my-openagent-gpt.json
           PROMPT_APPEND=$(cat << 'PROMPT_EOF'
           <ultrawork-mode>
           [CODE RED] Maximum precision required. Ultrathink before acting.
@@ -331,8 +332,6 @@ jobs:
           echo "$OPENCODE_AUTH_JSON" > ~/.local/share/opencode/auth.json
           chmod 600 ~/.local/share/opencode/auth.json
 
-          cat "$OPENCODE_JSON"
-
       # Collect context
       - name: Collect Context
         id: context
@@ -404,7 +403,7 @@ jobs:
               --add-label "sisyphus: working" || true
           fi
 
-      - name: Run oh-my-opencode
+      - name: Run oh-my-opencode-gpt
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           USER_COMMENT: ${{ steps.context.outputs.comment }}

@@ -32,6 +32,8 @@ describe("auto-update-checker constants", () => {
 
     expect(ACCEPTED_PACKAGE_NAMES).toContain("oh-my-opencode")
     expect(ACCEPTED_PACKAGE_NAMES).toContain("oh-my-openagent")
+    expect(ACCEPTED_PACKAGE_NAMES).toContain("oh-my-opencode-gpt")
+    expect(ACCEPTED_PACKAGE_NAMES).toContain("oh-my-openagent-gpt")
   })
 
   it("INSTALLED_PACKAGE_JSON_CANDIDATES covers every accepted package name (GH-3257)", async () => {

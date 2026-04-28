@@ -7,7 +7,7 @@
 > [!TIP]
 > **Building in Public**
 >
-> Мейнтейнер разрабатывает и поддерживает oh-my-opencode в режиме реального времени с помощью Jobdori — ИИ-ассистента на базе глубоко кастомизированной версии OpenClaw.
+> Мейнтейнер разрабатывает и поддерживает oh-my-openagent-gpt в режиме реального времени с помощью Jobdori — ИИ-ассистента на базе глубоко кастомизированной версии OpenClaw.
 > Каждая фича, каждый фикс, каждый триаж issue — в прямом эфире в нашем Discord.
 >
 > [![Building in Public](./.github/assets/building-in-public.png)](https://discord.gg/PUwSMR9XNk)
@@ -23,16 +23,16 @@
 
 > [!TIP] Будьте с нами!
 >
-> | [](https://discord.gg/PUwSMR9XNk)   | Вступайте в наш [Discord](https://discord.gg/PUwSMR9XNk), чтобы общаться с контрибьюторами и пользователями `oh-my-opencode`. |
+> | [](https://discord.gg/PUwSMR9XNk)   | Вступайте в наш [Discord](https://discord.gg/PUwSMR9XNk), чтобы общаться с контрибьюторами и пользователями `oh-my-openagent-gpt`. |
 > | ----------------------------------- | ------------------------------------------------------------ |
-> | [](https://x.com/justsisyphus)      | Новости и обновления `oh-my-opencode` раньше публиковались на моём аккаунте X. <br /> После ошибочной блокировки, [@justsisyphus](https://x.com/justsisyphus) публикует обновления вместо меня. |
+> | [](https://x.com/justsisyphus)      | Новости и обновления `oh-my-openagent-gpt` раньше публиковались на моём аккаунте X. <br /> После ошибочной блокировки, [@justsisyphus](https://x.com/justsisyphus) публикует обновления вместо меня. |
 > | [](https://github.com/code-yeongyu) | Подпишитесь на [@code-yeongyu](https://github.com/code-yeongyu) на GitHub, чтобы следить за другими проектами. |
 
 <!-- <CENTERED SECTION FOR GITHUB DISPLAY> --> <div align="center">
 
-[![Oh My OpenCode](./.github/assets/hero.jpg)](https://github.com/code-yeongyu/oh-my-openagent#oh-my-opencode)
+[![Oh My OpenAgent GPT](./.github/assets/hero.jpg)](https://github.com/AlfreddGco/oh-my-openagent-gpt#oh-my-openagent-gpt-fork)
 
-[![Preview](./.github/assets/omo.png)](https://github.com/code-yeongyu/oh-my-openagent#oh-my-opencode)
+[![Preview](./.github/assets/omo.png)](https://github.com/AlfreddGco/oh-my-openagent-gpt#oh-my-openagent-gpt-fork)
 
 </div>
 
@@ -42,7 +42,7 @@
 
 <div align="center">
 
-[![GitHub Release](https://img.shields.io/github/v/release/code-yeongyu/oh-my-openagent?color=369eff&labelColor=black&logo=github&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/releases) [![npm downloads](https://img.shields.io/npm/dt/oh-my-opencode?color=ff6b35&labelColor=black&style=flat-square)](https://www.npmjs.com/package/oh-my-opencode) [![GitHub Contributors](https://img.shields.io/github/contributors/code-yeongyu/oh-my-openagent?color=c4f042&labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/graphs/contributors) [![GitHub Forks](https://img.shields.io/github/forks/code-yeongyu/oh-my-openagent?color=8ae8ff&labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/network/members) [![GitHub Stars](https://img.shields.io/github/stars/code-yeongyu/oh-my-openagent?color=ffcb47&labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/code-yeongyu/oh-my-openagent?color=ff80eb&labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/issues) [![License](https://img.shields.io/badge/license-SUL--1.0-white?labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/blob/master/LICENSE.md) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/code-yeongyu/oh-my-openagent)
+[![GitHub Release](https://img.shields.io/github/v/release/AlfreddGco/oh-my-openagent-gpt?color=369eff&labelColor=black&logo=github&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/releases) [![npm downloads](https://img.shields.io/npm/dt/oh-my-opencode-gpt?color=ff6b35&labelColor=black&style=flat-square)](https://www.npmjs.com/package/oh-my-opencode-gpt) [![GitHub Contributors](https://img.shields.io/github/contributors/AlfreddGco/oh-my-openagent-gpt?color=c4f042&labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/graphs/contributors) [![GitHub Forks](https://img.shields.io/github/forks/AlfreddGco/oh-my-openagent-gpt?color=8ae8ff&labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/network/members) [![GitHub Stars](https://img.shields.io/github/stars/AlfreddGco/oh-my-openagent-gpt?color=ffcb47&labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/AlfreddGco/oh-my-openagent-gpt?color=ff80eb&labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/issues) [![License](https://img.shields.io/badge/license-SUL--1.0-white?labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/blob/master/LICENSE.md) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/AlfreddGco/oh-my-openagent-gpt)
 
 English | 한국어 | 日本語 | 简体中文 | Русский
 
@@ -87,8 +87,8 @@ English | 한국어 | 日本語 | 简体中文 | Русский
 Скопируйте и вставьте этот промпт в ваш LLM-агент (Claude Code, AmpCode, Cursor и т.д.):
 
 ```
-Install and configure oh-my-opencode by following the instructions here:
-https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/docs/guide/installation.md
+Install and configure oh-my-opencode-gpt by following the instructions here:
+https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/refs/heads/dev/docs/guide/installation.md
 ```
 
 Или прочитайте руководство по установке, но серьёзно — пусть агент сделает это за вас. Люди ошибаются в конфигах.
@@ -98,10 +98,10 @@ https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/do
 Загрузите руководство по установке и следуйте ему:
 
 ```bash
-curl -s https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/docs/guide/installation.md
+curl -s https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/refs/heads/dev/docs/guide/installation.md
 ```
 
-**Примечание**: Используйте опубликованное имя пакета и бинарника `oh-my-opencode`. Внутри `opencode.json` слой совместимости теперь предпочитает точку входа плагина `oh-my-openagent`, в то время как устаревшие записи `oh-my-opencode` все еще загружаются с предупреждением. Файлы конфигурации плагина по-прежнему часто используют `oh-my-opencode.json` или `oh-my-opencode.jsonc`, и как устаревшие, так и переименованные базовые имена распознаются во время переходного периода.
+**Примечание**: Используйте опубликованное имя пакета и бинарника `oh-my-opencode-gpt`. Внутри `opencode.json` слой совместимости теперь предпочитает точку входа плагина `oh-my-openagent-gpt`, в то время как устаревшие записи `oh-my-openagent` и `oh-my-opencode` все еще загружаются с предупреждением. Файлы конфигурации плагина должны использовать `oh-my-openagent-gpt.json` или `oh-my-openagent-gpt.jsonc`; устаревшие имена распознаются во время переходного периода.
 
 Анонимная телеметрия включена по умолчанию для улучшения надежности установки и работы. Она использует PostHog с хешированным идентификатором установки, никогда не используя исходное имя хоста, и может быть отключена с помощью `OMO_SEND_ANONYMOUS_TELEMETRY=0` или `OMO_DISABLE_POSTHOG=1`. См. [Политику конфиденциальности](docs/legal/privacy-policy.md) и [Условия обслуживания](docs/legal/terms-of-service.md).
 
@@ -112,7 +112,7 @@ curl -s https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/head
 Мы вышли за пределы эпохи чтения документации. Просто вставьте это в своего агента:
 
 ```
-Read this and tell me why it's not just another boilerplate: https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/README.md
+Read this and tell me why it's not just another boilerplate: https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/refs/heads/dev/README.md
 ```
 
 ## Ключевые возможности
@@ -257,19 +257,19 @@ project/
 
 ------
 
-> **Впервые в oh-my-opencode?** Прочитайте **Обзор**, чтобы понять, что у вас есть, или ознакомьтесь с **руководством по оркестрации**, чтобы узнать, как агенты взаимодействуют.
+> **Впервые в oh-my-opencode-gpt?** Прочитайте **Обзор**, чтобы понять, что у вас есть, или ознакомьтесь с **руководством по оркестрации**, чтобы узнать, как агенты взаимодействуют.
 
 ## Удаление
 
-Чтобы удалить oh-my-opencode:
+Чтобы удалить oh-my-opencode-gpt:
 
 1. **Удалите плагин из конфига OpenCode**
 
-   Отредактируйте `~/.config/opencode/opencode.json` (или `opencode.jsonc`) и уберите `"oh-my-opencode"` из массива `plugin`:
+   Отредактируйте `~/.config/opencode/opencode.json` (или `opencode.jsonc`) и уберите `"oh-my-openagent-gpt"` из массива `plugin`:
 
    ```bash
    # С помощью jq
-   jq '.plugin = [.plugin[] | select(. != "oh-my-opencode")]' \
+   jq '.plugin = [.plugin[] | select(. != "oh-my-openagent-gpt")]' \
        ~/.config/opencode/opencode.json > /tmp/oc.json && \
        mv /tmp/oc.json ~/.config/opencode/opencode.json
    ```
@@ -278,10 +278,10 @@ project/
 
    ```bash
    # Удалить пользовательский конфиг
-   rm -f ~/.config/opencode/oh-my-opencode.json ~/.config/opencode/oh-my-opencode.jsonc
+   rm -f ~/.config/opencode/oh-my-openagent-gpt.json ~/.config/opencode/oh-my-openagent-gpt.jsonc
 
    # Удалить конфиг проекта (если существует)
-   rm -f .opencode/oh-my-opencode.json .opencode/oh-my-opencode.jsonc
+   rm -f .opencode/oh-my-openagent-gpt.json .opencode/oh-my-openagent-gpt.jsonc
    ```
 
 3. **Проверьте удаление**
@@ -318,7 +318,7 @@ project/
 
 **Краткий обзор:**
 
-- **Расположение конфигов**: `.opencode/oh-my-opencode.jsonc` или `.opencode/oh-my-opencode.json` (проект), `~/.config/opencode/oh-my-opencode.jsonc` или `~/.config/opencode/oh-my-opencode.json` (пользователь)
+- **Расположение конфигов**: `.opencode/oh-my-openagent-gpt.jsonc` или `.opencode/oh-my-openagent-gpt.json` (проект), `~/.config/opencode/oh-my-openagent-gpt.jsonc` или `~/.config/opencode/oh-my-openagent-gpt.json` (пользователь)
 - **Поддержка JSONC**: Комментарии и конечные запятые поддерживаются
 - **Агенты**: Переопределение моделей, температур, промптов и разрешений для любого агента
 - **Встроенные навыки**: `playwright` (автоматизация браузера), `git-master` (атомарные коммиты)

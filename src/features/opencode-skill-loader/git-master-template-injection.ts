@@ -17,12 +17,8 @@ export function injectGitMasterConfig(template: string, config?: GitMasterConfig
 
 		result =
 			insertionPoint !== -1
-				? result.slice(0, insertionPoint) +
-					"```\n\n" +
-					injection +
-					"\n</execution>" +
-					result.slice(insertionPoint + "```\n</execution>".length)
-				: result + "\n\n" + injection
+				? `${result.slice(0, insertionPoint)}\`\`\`\n\n${injection}\n</execution>${result.slice(insertionPoint + "```\n</execution>".length)}`
+				: `${result}\n\n${injection}`
 	}
 
 	return gitEnvPrefix ? prefixGitCommandsInBashCodeBlocks(result, gitEnvPrefix) : result
@@ -61,7 +57,7 @@ function injectGitEnvPrefix(template: string, prefix: string): string {
 		)
 	}
 
-	return envPrefixSection + "\n\n---\n\n" + template
+	return `${envPrefixSection}\n\n---\n\n${template}`
 }
 
 function prefixGitCommandsInBashCodeBlocks(template: string, prefix: string): string {
@@ -101,7 +97,7 @@ function buildCommitFooterInjection(
 		const footerText =
 			typeof commitFooter === "string"
 				? commitFooter
-				: "Ultraworked with [Sisyphus](https://github.com/code-yeongyu/oh-my-openagent)"
+				: "Ultraworked with [Sisyphus](https://github.com/AlfreddGco/oh-my-openagent-gpt)"
 		sections.push("1. **Footer in commit body:**")
 		sections.push("```")
 		sections.push(footerText)
@@ -121,7 +117,7 @@ function buildCommitFooterInjection(
 		const footerText =
 			typeof commitFooter === "string"
 				? commitFooter
-				: "Ultraworked with [Sisyphus](https://github.com/code-yeongyu/oh-my-openagent)"
+				: "Ultraworked with [Sisyphus](https://github.com/AlfreddGco/oh-my-openagent-gpt)"
 		sections.push("**Example (both enabled):**")
 		sections.push("```bash")
 		sections.push(
@@ -132,7 +128,7 @@ function buildCommitFooterInjection(
 		const footerText =
 			typeof commitFooter === "string"
 				? commitFooter
-				: "Ultraworked with [Sisyphus](https://github.com/code-yeongyu/oh-my-openagent)"
+				: "Ultraworked with [Sisyphus](https://github.com/AlfreddGco/oh-my-openagent-gpt)"
 		sections.push("**Example:**")
 		sections.push("```bash")
 		sections.push(`${cmdPrefix}git commit -m "{Commit Message}" -m "${footerText}"`)

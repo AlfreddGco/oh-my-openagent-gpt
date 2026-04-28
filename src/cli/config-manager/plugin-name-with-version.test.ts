@@ -13,18 +13,22 @@ describe("getPluginNameWithVersion", () => {
 
   test("returns the canonical latest tag when current version matches latest", async () => {
     //#given
-    globalThis.fetch = mock(() =>
-      Promise.resolve({
+    const requestedUrls: string[] = []
+    globalThis.fetch = mock((url: string | URL | Request) => {
+      requestedUrls.push(String(url))
+
+      return Promise.resolve({
         ok: true,
         json: () => Promise.resolve({ latest: "3.13.1", beta: "3.14.0-beta.1" }),
       } as Response)
-    ) as unknown as typeof fetch
+    }) as unknown as typeof fetch
 
     //#when
     const result = await getPluginNameWithVersion("3.13.1")
 
     //#then
-    expect(result).toBe("oh-my-openagent@latest")
+    expect(requestedUrls[0]).toContain(encodeURIComponent("oh-my-opencode-gpt"))
+    expect(result).toBe("oh-my-openagent-gpt@latest")
   })
 
   test("preserves the canonical prerelease channel when fetch fails", async () => {
@@ -35,10 +39,10 @@ describe("getPluginNameWithVersion", () => {
     const result = await getPluginNameWithVersion("3.14.0-beta.1")
 
     //#then
-    expect(result).toBe("oh-my-openagent@beta")
+    expect(result).toBe("oh-my-openagent-gpt@beta")
   })
 
-  test("returns the canonical bare package name for stable fallback", async () => {
+  test("returns the canonical bare plugin name for stable fallback", async () => {
     //#given
     globalThis.fetch = mock(() =>
       Promise.resolve({
@@ -51,6 +55,6 @@ describe("getPluginNameWithVersion", () => {
     const result = await getPluginNameWithVersion("3.13.1")
 
     //#then
-    expect(result).toBe("oh-my-openagent")
+    expect(result).toBe("oh-my-openagent-gpt")
   })
 })

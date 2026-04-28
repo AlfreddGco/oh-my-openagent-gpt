@@ -1,25 +1,25 @@
 /**
- * Unified system directive prefix for oh-my-opencode internal messages.
+ * Unified system directive prefix for oh-my-openagent-gpt internal messages.
  * All system-generated messages should use this prefix for consistent filtering.
  *
- * Format: [SYSTEM DIRECTIVE: OH-MY-OPENCODE - {TYPE}]
+ * Format: [SYSTEM DIRECTIVE: OH-MY-OPENAGENT-GPT - {TYPE}]
  */
 
-export const SYSTEM_DIRECTIVE_PREFIX = "[SYSTEM DIRECTIVE: OH-MY-OPENCODE"
+export const SYSTEM_DIRECTIVE_PREFIX = "[SYSTEM DIRECTIVE: OH-MY-OPENAGENT-GPT"
 
 const SYSTEM_DIRECTIVE_LEADING_KEYWORD_PATTERN = /^\s*(?:ultrawork|ulw)\s+/i
 
 /**
  * Creates a system directive header with the given type.
  * @param type - The directive type (e.g., "TODO CONTINUATION", "RALPH LOOP")
- * @returns Formatted directive string like "[SYSTEM DIRECTIVE: OH-MY-OPENCODE - TODO CONTINUATION]"
+ * @returns Formatted directive string like "[SYSTEM DIRECTIVE: OH-MY-OPENAGENT-GPT - TODO CONTINUATION]"
  */
 export function createSystemDirective(type: string): string {
   return `${SYSTEM_DIRECTIVE_PREFIX} - ${type}]`
 }
 
 /**
- * Checks if a message starts with the oh-my-opencode system directive prefix.
+ * Checks if a message starts with the oh-my-openagent-gpt system directive prefix.
  * Used by keyword-detector and other hooks to skip system-generated messages.
  * @param text - The message text to check
  * @returns true if the message is a system directive

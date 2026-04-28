@@ -50,7 +50,7 @@ describe("generateOmoConfig - model fallback system", () => {
     const result = generateOmoConfig(config)
 
     //#then
-    expect(result.$schema).toBe("https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json")
+    expect(result.$schema).toBe("https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json")
     expect((result.agents as Record<string, { model: string }>).sisyphus).toBeUndefined()
   })
 

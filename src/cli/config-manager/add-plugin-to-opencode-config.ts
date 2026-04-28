@@ -1,14 +1,18 @@
 import { readFileSync, writeFileSync } from "node:fs"
+import { isLegacyPluginEntryName, matchesPluginName, PLUGIN_NAME, PUBLISHED_PACKAGE_NAME } from "../../shared"
 import type { ConfigMergeResult } from "../types"
-import { PLUGIN_NAME, LEGACY_PLUGIN_NAME } from "../../shared"
 import { backupConfigFile } from "./backup-config"
 import { getConfigDir } from "./config-context"
 import { ensureConfigDirectoryExists } from "./ensure-config-directory-exists"
 import { formatErrorWithSuggestion } from "./format-error-with-suggestion"
 import { detectConfigFormat } from "./opencode-config-format"
-import { parseOpenCodeConfigFileWithError, type OpenCodeConfig } from "./parse-opencode-config-file"
+import { type OpenCodeConfig, parseOpenCodeConfigFileWithError } from "./parse-opencode-config-file"
 import { getPluginNameWithVersion } from "./plugin-name-with-version"
 import { checkVersionCompatibility, extractVersionFromPluginEntry } from "./version-compatibility"
+
+function isCanonicalOrPackageEntry(plugin: string): boolean {
+  return matchesPluginName(plugin, PLUGIN_NAME) || matchesPluginName(plugin, PUBLISHED_PACKAGE_NAME)
+}
 
 export async function addPluginToOpenCodeConfig(currentVersion: string): Promise<ConfigMergeResult> {
   try {
@@ -22,12 +26,12 @@ export async function addPluginToOpenCodeConfig(currentVersion: string): Promise
   }
 
   const { format, path } = detectConfigFormat()
-  const pluginEntry = await getPluginNameWithVersion(currentVersion, PLUGIN_NAME)
+  const pluginEntry = await getPluginNameWithVersion(currentVersion)
 
   try {
     if (format === "none") {
       const config: OpenCodeConfig = { plugin: [pluginEntry] }
-      writeFileSync(path, JSON.stringify(config, null, 2) + "\n")
+      writeFileSync(path, `${JSON.stringify(config, null, 2)}\n`)
       return { success: true, configPath: path }
     }
 
@@ -43,15 +47,10 @@ export async function addPluginToOpenCodeConfig(currentVersion: string): Promise
     const config = parseResult.config
     const plugins = config.plugin ?? []
 
-    const canonicalEntries = plugins.filter(
-      (plugin) => plugin === PLUGIN_NAME || plugin.startsWith(`${PLUGIN_NAME}@`)
-    )
-    const legacyEntries = plugins.filter(
-      (plugin) => plugin === LEGACY_PLUGIN_NAME || plugin.startsWith(`${LEGACY_PLUGIN_NAME}@`)
-    )
+    const canonicalEntries = plugins.filter(isCanonicalOrPackageEntry)
+    const legacyEntries = plugins.filter(isLegacyPluginEntryName)
     const otherPlugins = plugins.filter(
-      (plugin) => !(plugin === PLUGIN_NAME || plugin.startsWith(`${PLUGIN_NAME}@`))
-        && !(plugin === LEGACY_PLUGIN_NAME || plugin.startsWith(`${LEGACY_PLUGIN_NAME}@`))
+      (plugin) => !isCanonicalOrPackageEntry(plugin) && !isLegacyPluginEntryName(plugin)
     )
 
     const existingEntry = canonicalEntries[0] ?? legacyEntries[0]
@@ -97,7 +96,7 @@ export async function addPluginToOpenCodeConfig(currentVersion: string): Promise
         writeFileSync(path, newContent)
       }
     } else {
-      writeFileSync(path, JSON.stringify(config, null, 2) + "\n")
+      writeFileSync(path, `${JSON.stringify(config, null, 2)}\n`)
     }
 
     return { success: true, configPath: path }

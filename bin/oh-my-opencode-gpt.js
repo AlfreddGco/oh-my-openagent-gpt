@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// bin/oh-my-opencode.js
+// bin/oh-my-opencode-gpt.js
 // Wrapper script that detects platform and spawns the correct binary
 
 import { spawnSync } from "node:child_process";
@@ -8,21 +8,17 @@ import { createRequire } from "node:module";
 import { getPlatformPackageCandidates, getBinaryPath } from "./platform.js";
 
 const require = createRequire(import.meta.url);
+const BINARY_NAME = "oh-my-opencode-gpt";
 
-/**
- * Detect libc family on Linux
- * @returns {string | null} 'glibc', 'musl', or null if detection fails
- */
 function getLibcFamily() {
   if (process.platform !== "linux") {
-    return undefined; // Not needed on non-Linux
+    return undefined;
   }
-  
+
   try {
     const detectLibc = require("detect-libc");
     return detectLibc.familySync();
   } catch {
-    // detect-libc not available
     return null;
   }
 }
@@ -74,9 +70,9 @@ function getSignalExitCode(signal) {
 function getPackageBaseName() {
   try {
     const packageJson = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
-    return packageJson.name || "oh-my-opencode";
+    return packageJson.name || BINARY_NAME;
   } catch {
-    return "oh-my-opencode";
+    return BINARY_NAME;
   }
 }
 
@@ -85,7 +81,7 @@ function main() {
   const libcFamily = getLibcFamily();
   const packageBaseName = getPackageBaseName();
   const avx2Supported = supportsAvx2();
-  
+
   let packageCandidates;
   try {
     packageCandidates = getPlatformPackageCandidates({
@@ -96,7 +92,7 @@ function main() {
       packageBaseName,
     });
   } catch (error) {
-    console.error(`\noh-my-opencode: ${error.message}\n`);
+    console.error(`\n${BINARY_NAME}: ${error.message}\n`);
     process.exit(1);
   }
 
@@ -111,7 +107,7 @@ function main() {
     .filter((entry) => entry !== null);
 
   if (resolvedBinaries.length === 0) {
-    console.error(`\noh-my-opencode: Platform binary not installed.`);
+    console.error(`\n${BINARY_NAME}: Platform binary not installed.`);
     console.error(`\nYour platform: ${platform}-${arch}${libcFamily === "musl" ? "-musl" : ""}`);
     console.error(`Expected packages (in order): ${packageCandidates.join(", ")}`);
     console.error(`\nTo fix, run:`);
@@ -131,7 +127,7 @@ function main() {
         continue;
       }
 
-      console.error(`\noh-my-opencode: Failed to execute binary.`);
+      console.error(`\n${BINARY_NAME}: Failed to execute binary.`);
       console.error(`Error: ${result.error.message}\n`);
       process.exit(2);
     }

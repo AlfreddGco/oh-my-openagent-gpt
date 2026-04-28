@@ -1,11 +1,11 @@
 {
-  "name": "oh-my-opencode-darwin-x64",
+  "name": "oh-my-opencode-gpt-darwin-x64",
   "version": "3.17.4",
-  "description": "Platform-specific binary for oh-my-opencode (darwin-x64)",
+  "description": "Platform-specific binary for oh-my-opencode-gpt (darwin-x64)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/code-yeongyu/oh-my-openagent"
+    "url": "https://github.com/AlfreddGco/oh-my-openagent-gpt"
   },
   "os": [
     "darwin"
@@ -17,6 +17,6 @@
     "bin"
   ],
   "bin": {
-    "oh-my-opencode": "./bin/oh-my-opencode"
+    "oh-my-opencode-gpt": "./bin/oh-my-opencode-gpt"
   }
 }

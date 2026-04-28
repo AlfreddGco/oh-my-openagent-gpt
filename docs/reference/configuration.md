@@ -1,6 +1,6 @@
 # Configuration Reference
 
-Complete reference for Oh My OpenCode plugin configuration. During the rename transition, the runtime recognizes both `oh-my-openagent.json[c]` and legacy `oh-my-opencode.json[c]` files.
+Complete reference for Oh My OpenCode plugin configuration. During the rename transition, the runtime writes `oh-my-openagent-gpt.json[c]` and recognizes legacy `oh-my-openagent.json[c]` plus `oh-my-opencode.json[c]` files.
 
 ---
 
@@ -45,26 +45,26 @@ Complete reference for Oh My OpenCode plugin configuration. During the rename tr
 
 User config is loaded first, then project config overrides it. In each directory, the compatibility layer recognizes both the renamed and legacy basenames.
 
-1. Project config: `.opencode/oh-my-openagent.json[c]` or `.opencode/oh-my-opencode.json[c]`
+1. Project config: `.opencode/oh-my-openagent-gpt.json[c]` or legacy `.opencode/oh-my-openagent.json[c]` / `.opencode/oh-my-opencode.json[c]`
 2. User config (`.jsonc` preferred over `.json`):
 
 | Platform    | Path candidates |
 | ----------- | --------------- |
-| macOS/Linux | `~/.config/opencode/oh-my-openagent.json[c]`, `~/.config/opencode/oh-my-opencode.json[c]` |
-| Windows     | `%APPDATA%\opencode\oh-my-openagent.json[c]`, `%APPDATA%\opencode\oh-my-opencode.json[c]` |
+| macOS/Linux | `~/.config/opencode/oh-my-openagent-gpt.json[c]`, legacy `~/.config/opencode/oh-my-openagent.json[c]` or `~/.config/opencode/oh-my-opencode.json[c]` |
+| Windows     | `%APPDATA%\opencode\oh-my-openagent-gpt.json[c]`, legacy `%APPDATA%\opencode\oh-my-openagent.json[c]` or `%APPDATA%\opencode\oh-my-opencode.json[c]` |
 
-**Rename compatibility:** The published package and CLI binary remain `oh-my-opencode`. OpenCode plugin registration prefers `oh-my-openagent`, while legacy `oh-my-opencode` entries and config basenames still load during the transition. Config detection checks `oh-my-opencode` before `oh-my-openagent`, so if both plugin config basenames exist in the same directory, the legacy `oh-my-opencode.*` file currently wins.
+**Rename compatibility:** The published package and CLI binary are `oh-my-opencode-gpt`. OpenCode plugin registration prefers `oh-my-openagent-gpt`, while legacy `oh-my-openagent` and `oh-my-opencode` entries and config basenames still load during the transition.
 JSONC supports `// line comments`, `/* block comments */`, and trailing commas.
 
 Enable schema autocomplete:
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json"
+"$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json"
 }
 ```
 
-Run `bunx oh-my-opencode install` for guided setup. Run `opencode models` to list available models.
+Run `bunx oh-my-opencode-gpt install` for guided setup. Run `opencode models` to list available models.
 
 ### Quick Start Example
 
@@ -72,7 +72,7 @@ Here's a practical starting configuration:
 
 ```jsonc
 {
-  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+"$schema": "https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/dev/assets/oh-my-openagent-gpt.schema.json",
 
   "agents": {
     // Main orchestrator: Claude Opus or Kimi K2.5 work best
@@ -348,7 +348,7 @@ Examples:
 - o-series models support `none` through `high` - `xhigh` is downgraded to `high`
 - GPT-5 supports `none`, `minimal`, `low`, `medium`, `high`, `xhigh` - all pass through
 
-Capability data comes from provider runtime metadata first. OmO also ships bundled models.dev-backed capability data, supports a refreshable local models.dev cache, and falls back to heuristic family detection plus alias rules when exact metadata is unavailable. `bunx oh-my-opencode doctor` surfaces capability diagnostics and warns when a configured model relies on compatibility fallback.
+Capability data comes from provider runtime metadata first. OmO also ships bundled models.dev-backed capability data, supports a refreshable local models.dev cache, and falls back to heuristic family detection plus alias rules when exact metadata is unavailable. `bunx oh-my-opencode-gpt doctor` surfaces capability diagnostics and warns when a configured model relies on compatibility fallback.
 
 
 #### Agent Provider Chains
@@ -379,7 +379,7 @@ Capability data comes from provider runtime metadata first. OmO also ships bundl
 | **unspecified-high**   | `claude-opus-4-7`   | `anthropic\|github-copilot\|opencode/claude-opus-4-7 (max)` → `openai\|github-copilot\|opencode/gpt-5.4 (high)` → `zai-coding-plan\|opencode/glm-5` → `kimi-for-coding/k2p5` → `opencode-go/glm-5` → `opencode/kimi-k2.5` → `opencode\|moonshotai\|moonshotai-cn\|firmware\|ollama-cloud\|aihubmix/kimi-k2.5` |
 | **writing**            | `gemini-3-flash`    | `google\|github-copilot\|opencode/gemini-3-flash` → `opencode-go/kimi-k2.5` → `anthropic\|github-copilot\|opencode/claude-sonnet-4-6` → `opencode-go/minimax-m2.7` |
 
-Run `bunx oh-my-opencode doctor --verbose` to see effective model resolution for your config.
+Run `bunx oh-my-opencode-gpt doctor --verbose` to see effective model resolution for your config.
 
 ---
 
@@ -903,7 +903,7 @@ OmO can refresh a local models.dev capability snapshot on startup. This cache is
 Notes:
 
 - Startup refresh runs through the auto-update checker hook.
-- Manual refresh is available via `bunx oh-my-opencode refresh-model-capabilities`.
+- Manual refresh is available via `bunx oh-my-opencode-gpt refresh-model-capabilities`.
 - Provider runtime metadata still takes priority when OmO resolves capabilities for compatibility checks.
 
 ### Hashline Edit

@@ -8,6 +8,7 @@ import { getPlatformPackageCandidates, getBinaryPath } from "./bin/platform.js";
 const require = createRequire(import.meta.url);
 
 const MIN_OPENCODE_VERSION = "1.4.0";
+const PACKAGE_NAME = "oh-my-opencode-gpt";
 
 /**
  * Parse version string into numeric parts
@@ -80,9 +81,9 @@ function getLibcFamily() {
 function getPackageBaseName() {
   try {
     const packageJson = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf8"));
-    return packageJson.name || "oh-my-opencode";
+    return packageJson.name || PACKAGE_NAME;
   } catch {
-    return "oh-my-opencode";
+    return PACKAGE_NAME;
   }
 }
 
@@ -94,7 +95,7 @@ function main() {
   // Check opencode version requirement
   const versionCheck = checkOpenCodeVersion();
   if (versionCheck.version && !versionCheck.ok) {
-    console.warn(`⚠ oh-my-opencode requires OpenCode >= ${MIN_OPENCODE_VERSION}`);
+    console.warn(`⚠ ${PACKAGE_NAME} requires OpenCode >= ${MIN_OPENCODE_VERSION}`);
     console.warn(`  Detected: ${versionCheck.version}`);
     console.warn(`  Please update OpenCode to avoid compatibility issues.`);
   }
@@ -122,9 +123,9 @@ function main() {
       );
     }
 
-    console.log(`✓ oh-my-opencode binary installed for ${platform}-${arch} (${resolvedPackage})`);
+    console.log(`✓ ${PACKAGE_NAME} binary installed for ${platform}-${arch} (${resolvedPackage})`);
   } catch (error) {
-    console.warn(`⚠ oh-my-opencode: ${error.message}`);
+    console.warn(`⚠ ${PACKAGE_NAME}: ${error.message}`);
     console.warn(`  The CLI may not work on this platform.`);
     // Don't fail installation - let user try anyway
   }

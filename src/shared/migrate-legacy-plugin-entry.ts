@@ -4,8 +4,8 @@ import { applyEdits, modify } from "jsonc-parser"
 
 import { parseJsoncSafe } from "./jsonc-parser"
 import { log } from "./logger"
-import { LEGACY_PLUGIN_NAME, PLUGIN_NAME } from "./plugin-identity"
 import { isCanonicalEntry, isLegacyEntry, toCanonicalEntry } from "./plugin-entry-migrator"
+import { CONFIG_ENTRY_ALIAS_NAMES, PLUGIN_NAME } from "./plugin-identity"
 
 interface OpenCodeConfig {
   plugin?: string[]
@@ -40,16 +40,14 @@ export function migrateLegacyPluginEntry(configPath: string): boolean {
 
   try {
     const content = readFileSync(configPath, "utf-8")
-    if (!content.includes(LEGACY_PLUGIN_NAME)) return false
-
     const parseResult = parseJsoncSafe<OpenCodeConfig>(content)
     const pluginEntries = parseResult.data?.plugin
-    if (!pluginEntries || !pluginEntries.some(isLegacyEntry)) return false
+    if (!pluginEntries?.some(isLegacyEntry)) return false
 
     const updatedPluginEntries = normalizePluginEntries(pluginEntries)
     const updated = configPath.endsWith(".jsonc")
       ? updateJsoncPluginArray(content, updatedPluginEntries)
-      : JSON.stringify({ ...(parseResult.data as OpenCodeConfig), plugin: updatedPluginEntries }, null, 2) + "\n"
+      : `${JSON.stringify({ ...(parseResult.data as OpenCodeConfig), plugin: updatedPluginEntries }, null, 2)}\n`
     if (!updated || updated === content) return false
 
     const tempPath = `${configPath}.tmp`
@@ -64,7 +62,7 @@ export function migrateLegacyPluginEntry(configPath: string): boolean {
     renameSync(tempPath, configPath)
     log("[migrateLegacyPluginEntry] Auto-migrated opencode.json plugin entry", {
       configPath,
-      from: LEGACY_PLUGIN_NAME,
+      from: CONFIG_ENTRY_ALIAS_NAMES,
       to: PLUGIN_NAME,
     })
     return true

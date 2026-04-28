@@ -1,6 +1,6 @@
-# Contributing to Oh My OpenCode
+# Contributing to Oh My OpenAgent GPT
 
-First off, thanks for taking the time to contribute! This document provides guidelines and instructions for contributing to oh-my-opencode.
+First off, thanks for taking the time to contribute! This document provides guidelines and instructions for contributing to oh-my-openagent-gpt.
 
 ## Table of Contents
 
@@ -62,8 +62,8 @@ If English isn't your first language, don't worry! We value your contributions r
 
 ```bash
 # Clone the repository
-git clone https://github.com/code-yeongyu/oh-my-openagent.git
-cd oh-my-openagent
+git clone https://github.com/AlfreddGco/oh-my-openagent-gpt.git
+cd oh-my-openagent-gpt
 
 # Install dependencies (bun only - never use npm/yarn)
 bun install
@@ -86,19 +86,19 @@ After making changes, you can test your local build in OpenCode:
 
    ```json
    {
-     "plugin": ["file:///absolute/path/to/oh-my-opencode/dist/index.js"]
+     "plugin": ["file:///absolute/path/to/oh-my-openagent-gpt/dist/index.js"]
    }
    ```
 
-   For example, if your project is at `/Users/yourname/projects/oh-my-opencode`:
+   For example, if your project is at `/Users/yourname/projects/oh-my-openagent-gpt`:
 
    ```json
    {
-     "plugin": ["file:///Users/yourname/projects/oh-my-opencode/dist/index.js"]
+     "plugin": ["file:///Users/yourname/projects/oh-my-openagent-gpt/dist/index.js"]
    }
    ```
 
-   > **Note**: Remove `"oh-my-opencode"` from the plugin array if it exists, to avoid conflicts with the npm version.
+   > **Note**: Remove `"oh-my-openagent-gpt"` from the plugin array if it exists, to avoid conflicts with the local version.
 
 3. **Restart OpenCode** to load the changes.
 
@@ -107,7 +107,7 @@ After making changes, you can test your local build in OpenCode:
 ## Project Structure
 
 ```
-oh-my-opencode/
+oh-my-openagent-gpt/
 ├── src/
 │   ├── index.ts         # Plugin entry (V1 PluginModule, default export)
 │   ├── plugin-config.ts # JSONC multi-level config (Zod v4)

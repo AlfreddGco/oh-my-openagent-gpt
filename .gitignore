@@ -7,8 +7,8 @@ node_modules/
 dist/
 
 # Platform binaries (built, not committed)
-packages/*/bin/oh-my-opencode
-packages/*/bin/oh-my-opencode.exe
+packages/*/bin/oh-my-opencode-gpt
+packages/*/bin/oh-my-opencode-gpt.exe
 packages/*/bin/*.map
 
 # IDE

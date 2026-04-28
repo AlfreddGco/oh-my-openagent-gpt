@@ -55,12 +55,31 @@ describe("checkForLegacyPluginEntry", () => {
     }
   })
 
+  it("detects a package-name plugin entry as an alias", () => {
+    const testConfigDir = createTestConfigDir()
+
+    try {
+      // given
+      writeFileSync(join(testConfigDir, "opencode.json"), JSON.stringify({ plugin: ["oh-my-opencode-gpt@latest"] }, null, 2))
+
+      // when
+      const result = checkForLegacyPluginEntry(testConfigDir)
+
+      // then
+      expect(result.hasLegacyEntry).toBe(true)
+      expect(result.hasCanonicalEntry).toBe(false)
+      expect(result.legacyEntries).toEqual(["oh-my-opencode-gpt@latest"])
+    } finally {
+      cleanupTestConfigDir(testConfigDir)
+    }
+  })
+
   it("does not flag a canonical plugin entry", () => {
     const testConfigDir = createTestConfigDir()
 
     try {
       // given
-      writeFileSync(join(testConfigDir, "opencode.json"), JSON.stringify({ plugin: ["oh-my-openagent"] }, null, 2))
+      writeFileSync(join(testConfigDir, "opencode.json"), JSON.stringify({ plugin: ["oh-my-openagent-gpt"] }, null, 2))
 
       // when
       const result = checkForLegacyPluginEntry(testConfigDir)

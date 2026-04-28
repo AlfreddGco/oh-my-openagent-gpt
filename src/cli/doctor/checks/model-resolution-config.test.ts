@@ -30,7 +30,7 @@ describe("model-resolution-config", () => {
       mkdirSync(testConfigDir, { recursive: true })
       process.env.OPENCODE_CONFIG_DIR = testConfigDir
       writeFileSync(
-        join(testConfigDir, "oh-my-openagent.json"),
+        join(testConfigDir, "oh-my-openagent-gpt.json"),
         JSON.stringify({ agents: { atlas: { model: "opencode-go/kimi-k2.5" } } }, null, 2) + "\n",
         "utf-8",
       )

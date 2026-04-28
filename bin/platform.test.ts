@@ -12,7 +12,7 @@ describe("getPlatformPackage", () => {
     const result = getPlatformPackage(input);
 
     // #then returns correct package name
-    expect(result).toBe("oh-my-opencode-darwin-arm64");
+    expect(result).toBe("oh-my-opencode-gpt-darwin-arm64");
   });
 
   test("returns darwin-x64 for macOS Intel", () => {
@@ -23,7 +23,7 @@ describe("getPlatformPackage", () => {
     const result = getPlatformPackage(input);
 
     // #then returns correct package name
-    expect(result).toBe("oh-my-opencode-darwin-x64");
+    expect(result).toBe("oh-my-opencode-gpt-darwin-x64");
   });
   // #endregion
 
@@ -36,7 +36,7 @@ describe("getPlatformPackage", () => {
     const result = getPlatformPackage(input);
 
     // #then returns correct package name
-    expect(result).toBe("oh-my-opencode-linux-x64");
+    expect(result).toBe("oh-my-opencode-gpt-linux-x64");
   });
 
   test("returns linux-arm64 for Linux ARM64 with glibc", () => {
@@ -47,7 +47,7 @@ describe("getPlatformPackage", () => {
     const result = getPlatformPackage(input);
 
     // #then returns correct package name
-    expect(result).toBe("oh-my-opencode-linux-arm64");
+    expect(result).toBe("oh-my-opencode-gpt-linux-arm64");
   });
   // #endregion
 
@@ -60,7 +60,7 @@ describe("getPlatformPackage", () => {
     const result = getPlatformPackage(input);
 
     // #then returns correct package name with musl suffix
-    expect(result).toBe("oh-my-opencode-linux-x64-musl");
+    expect(result).toBe("oh-my-opencode-gpt-linux-x64-musl");
   });
 
   test("returns linux-arm64-musl for Alpine ARM64", () => {
@@ -71,7 +71,7 @@ describe("getPlatformPackage", () => {
     const result = getPlatformPackage(input);
 
     // #then returns correct package name with musl suffix
-    expect(result).toBe("oh-my-opencode-linux-arm64-musl");
+    expect(result).toBe("oh-my-opencode-gpt-linux-arm64-musl");
   });
   // #endregion
 
@@ -84,7 +84,7 @@ describe("getPlatformPackage", () => {
     const result = getPlatformPackage(input);
 
     // #then returns correct package name with 'windows' not 'win32'
-    expect(result).toBe("oh-my-opencode-windows-x64");
+    expect(result).toBe("oh-my-opencode-gpt-windows-x64");
   });
   // #endregion
 
@@ -112,38 +112,38 @@ describe("getPlatformPackage", () => {
 describe("getBinaryPath", () => {
   test("returns path without .exe for Unix platforms", () => {
     // #given Unix platform package
-    const pkg = "oh-my-opencode-darwin-arm64";
+    const pkg = "oh-my-opencode-gpt-darwin-arm64";
     const platform = "darwin";
 
     // #when getting binary path
     const result = getBinaryPath(pkg, platform);
 
     // #then returns path without extension
-    expect(result).toBe("oh-my-opencode-darwin-arm64/bin/oh-my-opencode");
+    expect(result).toBe("oh-my-opencode-gpt-darwin-arm64/bin/oh-my-opencode-gpt");
   });
 
   test("returns path with .exe for Windows", () => {
     // #given Windows platform package
-    const pkg = "oh-my-opencode-windows-x64";
+    const pkg = "oh-my-opencode-gpt-windows-x64";
     const platform = "win32";
 
     // #when getting binary path
     const result = getBinaryPath(pkg, platform);
 
     // #then returns path with .exe extension
-    expect(result).toBe("oh-my-opencode-windows-x64/bin/oh-my-opencode.exe");
+    expect(result).toBe("oh-my-opencode-gpt-windows-x64/bin/oh-my-opencode-gpt.exe");
   });
 
   test("returns path without .exe for Linux", () => {
     // #given Linux platform package
-    const pkg = "oh-my-opencode-linux-x64";
+    const pkg = "oh-my-opencode-gpt-linux-x64";
     const platform = "linux";
 
     // #when getting binary path
     const result = getBinaryPath(pkg, platform);
 
     // #then returns path without extension
-    expect(result).toBe("oh-my-opencode-linux-x64/bin/oh-my-opencode");
+    expect(result).toBe("oh-my-opencode-gpt-linux-x64/bin/oh-my-opencode-gpt");
   });
 });
 
@@ -157,8 +157,8 @@ describe("getPlatformPackageCandidates", () => {
 
     // #then returns modern first then baseline fallback
     expect(result).toEqual([
-      "oh-my-opencode-linux-x64",
-      "oh-my-opencode-linux-x64-baseline",
+      "oh-my-opencode-gpt-linux-x64",
+      "oh-my-opencode-gpt-linux-x64-baseline",
     ]);
   });
 
@@ -171,8 +171,8 @@ describe("getPlatformPackageCandidates", () => {
 
     // #then returns musl modern first then musl baseline fallback
     expect(result).toEqual([
-      "oh-my-opencode-linux-x64-musl",
-      "oh-my-opencode-linux-x64-musl-baseline",
+      "oh-my-opencode-gpt-linux-x64-musl",
+      "oh-my-opencode-gpt-linux-x64-musl-baseline",
     ]);
   });
 
@@ -185,24 +185,24 @@ describe("getPlatformPackageCandidates", () => {
 
     // #then baseline package is preferred first
     expect(result).toEqual([
-      "oh-my-opencode-windows-x64-baseline",
-      "oh-my-opencode-windows-x64",
+      "oh-my-opencode-gpt-windows-x64-baseline",
+      "oh-my-opencode-gpt-windows-x64",
     ]);
   });
 
 
 
-  test("supports renamed package family via packageBaseName override", () => {
+  test("supports custom package family via packageBaseName override", () => {
     // #given Linux x64 with glibc and renamed package base
-    const input = { platform: "linux", arch: "x64", libcFamily: "glibc", packageBaseName: "oh-my-openagent" };
+    const input = { platform: "linux", arch: "x64", libcFamily: "glibc", packageBaseName: "custom-plugin" };
 
     // #when getting package candidates
     const result = getPlatformPackageCandidates(input);
 
-    // #then returns renamed package family candidates
+    // #then returns custom package family candidates
     expect(result).toEqual([
-      "oh-my-openagent-linux-x64",
-      "oh-my-openagent-linux-x64-baseline",
+      "custom-plugin-linux-x64",
+      "custom-plugin-linux-x64-baseline",
     ]);
   });
   test("returns only one candidate for ARM64", () => {
@@ -213,6 +213,6 @@ describe("getPlatformPackageCandidates", () => {
     const result = getPlatformPackageCandidates(input);
 
     // #then baseline fallback is not included
-    expect(result).toEqual(["oh-my-opencode-linux-arm64"]);
+    expect(result).toEqual(["oh-my-opencode-gpt-linux-arm64"]);
   });
 });

@@ -3,7 +3,7 @@ import type { OpencodeConfig } from "../types"
 import { PACKAGE_NAME } from "../constants"
 import { getConfigPaths } from "./config-paths"
 import { stripJsonComments } from "./jsonc-strip"
-import { LEGACY_PLUGIN_NAME, PLUGIN_NAME } from "../../../shared/plugin-identity"
+import { ACCEPTED_PACKAGE_NAMES } from "../../../shared/plugin-identity"
 
 export interface PluginEntryInfo {
   entry: string
@@ -13,7 +13,7 @@ export interface PluginEntryInfo {
 }
 
 const EXACT_SEMVER_REGEX = /^\d+\.\d+\.\d+(-[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$/
-const MATCH_PLUGIN_NAMES = [PACKAGE_NAME, PLUGIN_NAME, LEGACY_PLUGIN_NAME]
+const MATCH_PLUGIN_NAMES = [...new Set([PACKAGE_NAME, ...ACCEPTED_PACKAGE_NAMES])]
 
 export function findPluginEntry(directory: string): PluginEntryInfo | null {
   for (const configPath of getConfigPaths(directory)) {

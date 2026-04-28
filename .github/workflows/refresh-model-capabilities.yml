@@ -12,7 +12,7 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    if: github.repository == 'code-yeongyu/oh-my-openagent'
+    if: github.repository == 'AlfreddGco/oh-my-openagent-gpt'
     steps:
       - uses: actions/checkout@v4
 

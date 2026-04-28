@@ -18,11 +18,12 @@ import { installAgentSortShim } from "./shared/agent-sort-shim"
 import { detectExternalSkillPlugin, getSkillPluginConflictWarning } from "./shared/external-plugin-detector"
 import { startBackgroundCheck as startTmuxCheck } from "./tools/interactive-bash"
 import { createPluginPostHog, getPostHogDistinctId } from "./shared/posthog"
+import { PLUGIN_NAME } from "./shared/plugin-identity"
 
 const serverPlugin: Plugin = async (input, _options): Promise<Hooks> => {
   installAgentSortShim()
   initConfigContext("opencode", null)
-  log("[oh-my-openagent] ENTRY - plugin loading", {
+  log(`[${PLUGIN_NAME}] ENTRY - plugin loading`, {
     directory: input.directory,
   })
   logLegacyPluginStartupWarning()
@@ -130,7 +131,7 @@ const serverPlugin: Plugin = async (input, _options): Promise<Hooks> => {
 }
 
 const pluginModule: PluginModule = {
-  id: "oh-my-openagent",
+  id: PLUGIN_NAME,
   server: serverPlugin,
 }
 

@@ -2,9 +2,9 @@
 
 Last updated: April 11, 2026
 
-This Privacy Policy explains how oh-my-opencode and oh-my-openagent collect, use, and protect information related to the published CLI package, the OpenCode plugin, and the project website or repository materials where they apply.
+This Privacy Policy explains how oh-my-opencode-gpt and oh-my-openagent-gpt collect, use, and protect information related to the published CLI package, the OpenCode plugin, and the project website or repository materials where they apply.
 
-For this policy, "Application" means the published `oh-my-opencode` CLI package and the OpenCode plugin runtime it installs. "Service" means the Application and the project distribution surfaces together. "We" and "our" refer to the maintainer of oh-my-opencode. "You" refers to a user of the Service.
+For this policy, "Application" means the published `oh-my-opencode-gpt` CLI package and the OpenCode plugin runtime it installs. "Service" means the Application and the project distribution surfaces together. "We" and "our" refer to the maintainer of oh-my-openagent-gpt. "You" refers to a user of the Service.
 
 By using the Service, you accept this Privacy Policy and the accompanying Terms of Service in [terms-of-service.md](./terms-of-service.md).
 

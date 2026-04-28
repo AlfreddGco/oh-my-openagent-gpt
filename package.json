@@ -1,13 +1,12 @@
 {
-  "name": "oh-my-opencode",
+  "name": "oh-my-opencode-gpt",
   "version": "3.17.5",
   "description": "The Best AI Agent Harness - Batteries-Included OpenCode Plugin with Multi-Model Orchestration, Parallel Background Agents, and Crafted LSP/AST Tools",
   "main": "./dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "bin": {
-    "oh-my-opencode": "bin/oh-my-opencode.js",
-    "oh-my-openagent": "bin/oh-my-opencode.js"
+    "oh-my-opencode-gpt": "bin/oh-my-opencode-gpt.js"
   },
   "files": [
     "dist",
@@ -19,7 +18,7 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./schema.json": "./dist/oh-my-opencode.schema.json"
+    "./schema.json": "./dist/oh-my-openagent-gpt.schema.json"
   },
   "scripts": {
     "build": "bun build src/index.ts --outdir dist --target bun --format esm --external @ast-grep/napi --external zod && tsc --emitDeclarationOnly && bun build src/cli/index.ts --outdir dist/cli --target bun --format esm --external @ast-grep/napi && bun run build:schema",
@@ -48,12 +47,12 @@
   "license": "SUL-1.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/code-yeongyu/oh-my-openagent.git"
+    "url": "git+https://github.com/AlfreddGco/oh-my-openagent-gpt.git"
   },
   "bugs": {
-    "url": "https://github.com/code-yeongyu/oh-my-openagent/issues"
+    "url": "https://github.com/AlfreddGco/oh-my-openagent-gpt/issues"
   },
-  "homepage": "https://github.com/code-yeongyu/oh-my-openagent#readme",
+  "homepage": "https://github.com/AlfreddGco/oh-my-openagent-gpt#readme",
   "dependencies": {
     "@ast-grep/cli": "^0.41.1",
     "@ast-grep/napi": "^0.41.1",
@@ -80,17 +79,17 @@
     "zod": "^4.3.0"
   },
   "optionalDependencies": {
-    "oh-my-opencode-darwin-arm64": "3.17.4",
-    "oh-my-opencode-darwin-x64": "3.17.4",
-    "oh-my-opencode-darwin-x64-baseline": "3.17.4",
-    "oh-my-opencode-linux-arm64": "3.17.4",
-    "oh-my-opencode-linux-arm64-musl": "3.17.4",
-    "oh-my-opencode-linux-x64": "3.17.4",
-    "oh-my-opencode-linux-x64-baseline": "3.17.4",
-    "oh-my-opencode-linux-x64-musl": "3.17.4",
-    "oh-my-opencode-linux-x64-musl-baseline": "3.17.4",
-    "oh-my-opencode-windows-x64": "3.17.4",
-    "oh-my-opencode-windows-x64-baseline": "3.17.4"
+    "oh-my-opencode-gpt-darwin-arm64": "3.17.4",
+    "oh-my-opencode-gpt-darwin-x64": "3.17.4",
+    "oh-my-opencode-gpt-darwin-x64-baseline": "3.17.4",
+    "oh-my-opencode-gpt-linux-arm64": "3.17.4",
+    "oh-my-opencode-gpt-linux-arm64-musl": "3.17.4",
+    "oh-my-opencode-gpt-linux-x64": "3.17.4",
+    "oh-my-opencode-gpt-linux-x64-baseline": "3.17.4",
+    "oh-my-opencode-gpt-linux-x64-musl": "3.17.4",
+    "oh-my-opencode-gpt-linux-x64-musl-baseline": "3.17.4",
+    "oh-my-opencode-gpt-windows-x64": "3.17.4",
+    "oh-my-opencode-gpt-windows-x64-baseline": "3.17.4"
   },
   "overrides": {},
   "trustedDependencies": [

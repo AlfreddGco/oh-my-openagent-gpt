@@ -1,20 +1,22 @@
-import { LEGACY_PLUGIN_NAME, PLUGIN_NAME } from "./plugin-identity"
+import { CONFIG_ENTRY_ALIAS_NAMES, matchesPluginName, PLUGIN_NAME } from "./plugin-identity"
 
 export function isLegacyEntry(entry: string): boolean {
-  return entry === LEGACY_PLUGIN_NAME || entry.startsWith(`${LEGACY_PLUGIN_NAME}@`)
+  return CONFIG_ENTRY_ALIAS_NAMES.some((pluginName) => matchesPluginName(entry, pluginName))
 }
 
 export function isCanonicalEntry(entry: string): boolean {
-  return entry === PLUGIN_NAME || entry.startsWith(`${PLUGIN_NAME}@`)
+  return matchesPluginName(entry, PLUGIN_NAME)
 }
 
 export function toCanonicalEntry(entry: string): string {
-  if (entry === LEGACY_PLUGIN_NAME) {
-    return PLUGIN_NAME
-  }
+  for (const legacyPluginName of CONFIG_ENTRY_ALIAS_NAMES) {
+    if (entry === legacyPluginName) {
+      return PLUGIN_NAME
+    }
 
-  if (entry.startsWith(`${LEGACY_PLUGIN_NAME}@`)) {
-    return `${PLUGIN_NAME}${entry.slice(LEGACY_PLUGIN_NAME.length)}`
+    if (entry.startsWith(`${legacyPluginName}@`)) {
+      return `${PLUGIN_NAME}${entry.slice(legacyPluginName.length)}`
+    }
   }
 
   return entry

@@ -7,7 +7,7 @@
 > [!TIP]
 > **Building in Public**
 >
-> メンテナーが Jobdori を使い、oh-my-opencode をリアルタイムで開発・メンテナンスしています。Jobdori は OpenClaw をベースに大幅カスタマイズされた AI アシスタントです。
+> メンテナーが Jobdori を使い、oh-my-openagent-gpt をリアルタイムで開発・メンテナンスしています。Jobdori は OpenClaw をベースに大幅カスタマイズされた AI アシスタントです。
 > すべての機能開発、修正、Issue トリアージを Discord でライブでご覧いただけます。
 >
 > [![Building in Public](./.github/assets/building-in-public.png)](https://discord.gg/PUwSMR9XNk)
@@ -23,18 +23,18 @@
 > [!TIP]
 > 私たちと一緒に！
 >
-> | [<img alt="Discord link" src="https://img.shields.io/discord/1452487457085063218?color=5865F2&label=discord&labelColor=black&logo=discord&logoColor=white&style=flat-square" width="156px" />](https://discord.gg/PUwSMR9XNk) | [Discordコミュニティ](https://discord.gg/PUwSMR9XNk)に参加して、コントリビューターや他の `oh-my-opencode` ユーザーと交流しましょう。 |
+> | [<img alt="Discord link" src="https://img.shields.io/discord/1452487457085063218?color=5865F2&label=discord&labelColor=black&logo=discord&logoColor=white&style=flat-square" width="156px" />](https://discord.gg/PUwSMR9XNk) | [Discordコミュニティ](https://discord.gg/PUwSMR9XNk)に参加して、コントリビューターや他の `oh-my-openagent-gpt` ユーザーと交流しましょう。 |
 > | :-----| :----- |
-> | [<img alt="X link" src="https://img.shields.io/badge/Follow-%40justsisyphus-00CED1?style=flat-square&logo=x&labelColor=black" width="156px" />](https://x.com/justsisyphus) | `oh-my-opencode` のニュースやアップデートは私のXアカウントで投稿されていましたが、 <br /> 誤って凍結されてしまったため、現在は [@justsisyphus](https://x.com/justsisyphus) が代わりにアップデートを投稿しています。 |
+> | [<img alt="X link" src="https://img.shields.io/badge/Follow-%40justsisyphus-00CED1?style=flat-square&logo=x&labelColor=black" width="156px" />](https://x.com/justsisyphus) | `oh-my-openagent-gpt` のニュースやアップデートは私のXアカウントで投稿されていましたが、 <br /> 誤って凍結されてしまったため、現在は [@justsisyphus](https://x.com/justsisyphus) が代わりにアップデートを投稿しています。 |
 > | [<img alt="GitHub Follow" src="https://img.shields.io/github/followers/code-yeongyu?style=flat-square&logo=github&labelColor=black&color=24292f" width="156px" />](https://github.com/code-yeongyu) | さらに多くのプロジェクトを見たい場合は、GitHubで [@code-yeongyu](https://github.com/code-yeongyu) をフォローしてください。 |
 
 <!-- <CENTERED SECTION FOR GITHUB DISPLAY> -->
 
 <div align="center">
 
-[![Oh My OpenCode](./.github/assets/hero.jpg)](https://github.com/code-yeongyu/oh-my-openagent#oh-my-opencode)
+[![Oh My OpenAgent GPT](./.github/assets/hero.jpg)](https://github.com/AlfreddGco/oh-my-openagent-gpt#oh-my-openagent-gpt-fork)
 
-[![Preview](./.github/assets/omo.png)](https://github.com/code-yeongyu/oh-my-openagent#oh-my-opencode)
+[![Preview](./.github/assets/omo.png)](https://github.com/AlfreddGco/oh-my-openagent-gpt#oh-my-openagent-gpt-fork)
 
 </div>
 
@@ -44,14 +44,14 @@
 
 <div align="center">
 
-[![GitHub Release](https://img.shields.io/github/v/release/code-yeongyu/oh-my-openagent?color=369eff&labelColor=black&logo=github&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/releases)
-[![npm downloads](https://img.shields.io/npm/dt/oh-my-opencode?color=ff6b35&labelColor=black&style=flat-square)](https://www.npmjs.com/package/oh-my-opencode)
-[![GitHub Contributors](https://img.shields.io/github/contributors/code-yeongyu/oh-my-openagent?color=c4f042&labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/graphs/contributors)
-[![GitHub Forks](https://img.shields.io/github/forks/code-yeongyu/oh-my-openagent?color=8ae8ff&labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/network/members)
-[![GitHub Stars](https://img.shields.io/github/stars/code-yeongyu/oh-my-openagent?color=ffcb47&labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/stargazers)
-[![GitHub Issues](https://img.shields.io/github/issues/code-yeongyu/oh-my-openagent?color=ff80eb&labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/issues)
-[![License](https://img.shields.io/badge/license-SUL--1.0-white?labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/blob/dev/LICENSE.md)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/code-yeongyu/oh-my-openagent)
+[![GitHub Release](https://img.shields.io/github/v/release/AlfreddGco/oh-my-openagent-gpt?color=369eff&labelColor=black&logo=github&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/releases)
+[![npm downloads](https://img.shields.io/npm/dt/oh-my-opencode-gpt?color=ff6b35&labelColor=black&style=flat-square)](https://www.npmjs.com/package/oh-my-opencode-gpt)
+[![GitHub Contributors](https://img.shields.io/github/contributors/AlfreddGco/oh-my-openagent-gpt?color=c4f042&labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/graphs/contributors)
+[![GitHub Forks](https://img.shields.io/github/forks/AlfreddGco/oh-my-openagent-gpt?color=8ae8ff&labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/network/members)
+[![GitHub Stars](https://img.shields.io/github/stars/AlfreddGco/oh-my-openagent-gpt?color=ffcb47&labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/AlfreddGco/oh-my-openagent-gpt?color=ff80eb&labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/issues)
+[![License](https://img.shields.io/badge/license-SUL--1.0-white?labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/blob/dev/LICENSE.md)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/AlfreddGco/oh-my-openagent-gpt)
 
 [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-cn.md)
 
@@ -83,7 +83,7 @@
 
 ---
 
-# Oh My OpenCode
+# Oh My OpenAgent GPT
 
 最初はこれを「Claude Codeにステロイドを打ったもの」と呼んでいました。それは過小評価でした。
 
@@ -101,8 +101,8 @@ OmOをインストールして、`ultrawork`とタイプしてください。狂
 以下のプロンプトをコピーして、あなたのLLMエージェント（Claude Code、AmpCode、Cursorなど）に貼り付けてください：
 
 ```
-Install and configure oh-my-opencode by following the instructions here:
-https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/docs/guide/installation.md
+Install and configure oh-my-opencode-gpt by following the instructions here:
+https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/refs/heads/dev/docs/guide/installation.md
 ```
 
 もしくは[インストールガイド](docs/guide/installation.md)を直接読んでもいいですが、マジでエージェントにやらせてください。人間は設定で必ずタイポします。
@@ -112,10 +112,10 @@ https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/do
 インストールガイドを取得して、それに従ってください：
 
 ```bash
-curl -s https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/docs/guide/installation.md
+curl -s https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/refs/heads/dev/docs/guide/installation.md
 ```
 
-**注記**: 公開されているパッケージおよびバイナリ名は `oh-my-opencode` を使用してください。`opencode.json` 内では、互換性レイヤーがプラグインエントリ `oh-my-openagent` を優先しますが、従来の `oh-my-opencode` エントリも警告付きで読み込まれます。プラグイン設定ファイルは依然として `oh-my-opencode.json` または `oh-my-opencode.jsonc` を使用するのが一般的で、移行期間中は従来のファイル名と改名後のファイル名の両方が認識されます。
+**注記**: 公開されているパッケージおよびバイナリ名は `oh-my-opencode-gpt` を使用してください。`opencode.json` 内では、互換性レイヤーがプラグインエントリ `oh-my-openagent-gpt` を優先しますが、従来の `oh-my-openagent` と `oh-my-opencode` エントリも警告付きで読み込まれます。プラグイン設定ファイルは `oh-my-openagent-gpt.json` または `oh-my-openagent-gpt.jsonc` を使用してください。移行期間中は従来のファイル名も認識されます。
 
 匿名のテレメトリは、インストールとランタイムの信頼性向上のためにデフォルトで有効になっています。これは PostHog を使用し、生のホスト名ではなくハッシュ化されたインストール識別子を使用します。無効化するには `OMO_SEND_ANONYMOUS_TELEMETRY=0` または `OMO_DISABLE_POSTHOG=1` を設定してください。[プライバシーポリシー](docs/legal/privacy-policy.md)と[利用規約](docs/legal/terms-of-service.md)をご覧ください。
 
@@ -126,7 +126,7 @@ curl -s https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/head
 ドキュメントを読む時代は終わりました。このテキストをエージェントに貼り付けるだけです：
 
 ```
-Read this and tell me why it's not just another boilerplate: https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/README.md
+Read this and tell me why it's not just another boilerplate: https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/refs/heads/dev/README.md
 ```
 
 ## ハイライト
@@ -275,19 +275,19 @@ project/
 
 > **背景のストーリーを知りたいですか？** なぜSisyphusは岩を転がすのか、なぜHephaestusは「正当なる職人」なのか、そして[オーケストレーションガイド](docs/guide/orchestration.md)をお読みください。
 >
-> oh-my-opencodeは初めてですか？どのモデルを使うべきかについては、**[インストールガイド](docs/guide/installation.md#step-5-understand-your-model-setup)** で推奨モデルを確認してください。
+> oh-my-opencode-gptは初めてですか？どのモデルを使うべきかについては、**[インストールガイド](docs/guide/installation.md#step-5-understand-your-model-setup)** で推奨モデルを確認してください。
 
 ## アンインストール (Uninstallation)
 
-oh-my-opencodeを削除するには：
+oh-my-opencode-gptを削除するには：
 
 1. **OpenCodeの設定からプラグインを削除する**
 
-   `~/.config/opencode/opencode.json`（または `opencode.jsonc`）を編集し、`plugin` 配列から `"oh-my-opencode"` を削除します：
+   `~/.config/opencode/opencode.json`（または `opencode.jsonc`）を編集し、`plugin` 配列から `"oh-my-openagent-gpt"` を削除します：
 
    ```bash
    # jq を使用する場合
-   jq '.plugin = [.plugin[] | select(. != "oh-my-opencode")]' \
+   jq '.plugin = [.plugin[] | select(. != "oh-my-openagent-gpt")]' \
        ~/.config/opencode/opencode.json > /tmp/oc.json && \
        mv /tmp/oc.json ~/.config/opencode/opencode.json
    ```
@@ -296,10 +296,10 @@ oh-my-opencodeを削除するには：
 
    ```bash
    # ユーザー設定を削除
-   rm -f ~/.config/opencode/oh-my-opencode.json ~/.config/opencode/oh-my-opencode.jsonc
+   rm -f ~/.config/opencode/oh-my-openagent-gpt.json ~/.config/opencode/oh-my-openagent-gpt.jsonc
 
    # プロジェクト設定を削除（存在する場合）
-   rm -f .opencode/oh-my-opencode.json .opencode/oh-my-opencode.jsonc
+   rm -f .opencode/oh-my-openagent-gpt.json .opencode/oh-my-openagent-gpt.jsonc
    ```
 
 3. **削除の確認**

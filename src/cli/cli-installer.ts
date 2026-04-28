@@ -163,7 +163,7 @@ export async function runCliInstaller(args: InstallArgs, version: string): Promi
 
   console.log(`${SYMBOLS.star} ${color.yellow("If you found this helpful, consider starring the repo!")}`)
   console.log(
-    `  ${color.dim("gh api --silent --method PUT /user/starred/code-yeongyu/oh-my-openagent >/dev/null 2>&1 || true")}`,
+    `  ${color.dim("gh api --silent --method PUT /user/starred/AlfreddGco/oh-my-openagent-gpt >/dev/null 2>&1 || true")}`,
   )
   console.log()
   console.log(color.dim("oMoMoMoMo... Enjoy!"))

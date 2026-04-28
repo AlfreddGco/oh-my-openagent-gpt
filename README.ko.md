@@ -7,7 +7,7 @@
 > [!TIP]
 > **Building in Public**
 >
-> 메인테이너가 Jobdori를 통해 oh-my-opencode를 실시간으로 개발하고 있습니다. Jobdori는 OpenClaw를 기반으로 대폭 커스터마이징된 AI 어시스턴트입니다.
+> 메인테이너가 Jobdori를 통해 oh-my-openagent-gpt를 실시간으로 개발하고 있습니다. Jobdori는 OpenClaw를 기반으로 대폭 커스터마이징된 AI 어시스턴트입니다.
 > 모든 기능 개발, 버그 수정, 이슈 트리아지를 Discord에서 실시간으로 확인하세요.
 >
 > [![Building in Public](./.github/assets/building-in-public.png)](https://discord.gg/PUwSMR9XNk)
@@ -18,18 +18,18 @@
 > [!TIP]
 > 저희와 함께 하세요!
 >
-> | [<img alt="Discord link" src="https://img.shields.io/discord/1452487457085063218?color=5865F2&label=discord&labelColor=black&logo=discord&logoColor=white&style=flat-square" width="156px" />](https://discord.gg/PUwSMR9XNk) | [Discord 커뮤니티](https://discord.gg/PUwSMR9XNk)에 가입하여 기여자 및 다른 `oh-my-opencode` 사용자들과 소통하세요. |
+> | [<img alt="Discord link" src="https://img.shields.io/discord/1452487457085063218?color=5865F2&label=discord&labelColor=black&logo=discord&logoColor=white&style=flat-square" width="156px" />](https://discord.gg/PUwSMR9XNk) | [Discord 커뮤니티](https://discord.gg/PUwSMR9XNk)에 가입하여 기여자 및 다른 `oh-my-openagent-gpt` 사용자들과 소통하세요. |
 > | :-----| :----- |
-> | [<img alt="X link" src="https://img.shields.io/badge/Follow-%40justsisyphus-00CED1?style=flat-square&logo=x&labelColor=black" width="156px" />](https://x.com/justsisyphus) | `oh-my-opencode`에 대한 소식과 업데이트는 제 X 계정에 올라왔었지만, <br /> 실수로 정지된 이후에는 [@justsisyphus](https://x.com/justsisyphus)가 대신 업데이트를 게시하고 있습니다. |
+> | [<img alt="X link" src="https://img.shields.io/badge/Follow-%40justsisyphus-00CED1?style=flat-square&logo=x&labelColor=black" width="156px" />](https://x.com/justsisyphus) | `oh-my-openagent-gpt`에 대한 소식과 업데이트는 제 X 계정에 올라왔었지만, <br /> 실수로 정지된 이후에는 [@justsisyphus](https://x.com/justsisyphus)가 대신 업데이트를 게시하고 있습니다. |
 > | [<img alt="GitHub Follow" src="https://img.shields.io/github/followers/code-yeongyu?style=flat-square&logo=github&labelColor=black&color=24292f" width="156px" />](https://github.com/code-yeongyu) | 더 많은 프로젝트를 보려면 GitHub에서 [@code-yeongyu](https://github.com/code-yeongyu)를 팔로우하세요. |
 
 <!-- <CENTERED SECTION FOR GITHUB DISPLAY> -->
 
 <div align="center">
 
-[![Oh My OpenCode](./.github/assets/hero.jpg)](https://github.com/code-yeongyu/oh-my-openagent#oh-my-opencode)
+[![Oh My OpenAgent GPT](./.github/assets/hero.jpg)](https://github.com/AlfreddGco/oh-my-openagent-gpt#oh-my-openagent-gpt-fork)
 
-[![Preview](./.github/assets/omo.png)](https://github.com/code-yeongyu/oh-my-openagent#oh-my-opencode)
+[![Preview](./.github/assets/omo.png)](https://github.com/AlfreddGco/oh-my-openagent-gpt#oh-my-openagent-gpt-fork)
 
 </div>
 
@@ -39,14 +39,14 @@
 
 <div align="center">
 
-[![GitHub Release](https://img.shields.io/github/v/release/code-yeongyu/oh-my-openagent?color=369eff&labelColor=black&logo=github&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/releases)
-[![npm downloads](https://img.shields.io/npm/dt/oh-my-opencode?color=ff6b35&labelColor=black&style=flat-square)](https://www.npmjs.com/package/oh-my-opencode)
-[![GitHub Contributors](https://img.shields.io/github/contributors/code-yeongyu/oh-my-openagent?color=c4f042&labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/graphs/contributors)
-[![GitHub Forks](https://img.shields.io/github/forks/code-yeongyu/oh-my-openagent?color=8ae8ff&labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/network/members)
-[![GitHub Stars](https://img.shields.io/github/stars/code-yeongyu/oh-my-openagent?color=ffcb47&labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/stargazers)
-[![GitHub Issues](https://img.shields.io/github/issues/code-yeongyu/oh-my-openagent?color=ff80eb&labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/issues)
-[![License](https://img.shields.io/badge/license-SUL--1.0-white?labelColor=black&style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/blob/dev/LICENSE.md)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/code-yeongyu/oh-my-openagent)
+[![GitHub Release](https://img.shields.io/github/v/release/AlfreddGco/oh-my-openagent-gpt?color=369eff&labelColor=black&logo=github&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/releases)
+[![npm downloads](https://img.shields.io/npm/dt/oh-my-opencode-gpt?color=ff6b35&labelColor=black&style=flat-square)](https://www.npmjs.com/package/oh-my-opencode-gpt)
+[![GitHub Contributors](https://img.shields.io/github/contributors/AlfreddGco/oh-my-openagent-gpt?color=c4f042&labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/graphs/contributors)
+[![GitHub Forks](https://img.shields.io/github/forks/AlfreddGco/oh-my-openagent-gpt?color=8ae8ff&labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/network/members)
+[![GitHub Stars](https://img.shields.io/github/stars/AlfreddGco/oh-my-openagent-gpt?color=ffcb47&labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/AlfreddGco/oh-my-openagent-gpt?color=ff80eb&labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/issues)
+[![License](https://img.shields.io/badge/license-SUL--1.0-white?labelColor=black&style=flat-square)](https://github.com/AlfreddGco/oh-my-openagent-gpt/blob/dev/LICENSE.md)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/AlfreddGco/oh-my-openagent-gpt)
 
 [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-cn.md)
 
@@ -95,8 +95,8 @@ OmO 설치하고. `ultrawork` 치세요. 끝.
 다음 프롬프트를 복사해서 여러분의 LLM 에이전트(Claude Code, AmpCode, Cursor 등)에 붙여넣으세요:
 
 ```
-Install and configure oh-my-opencode by following the instructions here:
-https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/docs/guide/installation.md
+Install and configure oh-my-opencode-gpt by following the instructions here:
+https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/refs/heads/dev/docs/guide/installation.md
 ```
 
 아니면 [설치 가이드](docs/guide/installation.md)를 직접 읽으셔도 되지만, 진심으로 그냥 에이전트한테 시키세요. 사람은 설정하다 꼭 오타 냅니다.
@@ -106,10 +106,10 @@ https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/do
 설치 가이드를 가져와서 따라 하세요:
 
 ```bash
-curl -s https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/docs/guide/installation.md
+curl -s https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/refs/heads/dev/docs/guide/installation.md
 ```
 
-**참고**: 배포된 패키지와 바이너리 이름은 `oh-my-opencode`를 사용하세요. `opencode.json` 내부에서는 호환성 레이어가 이제 플러그인 엔트리 `oh-my-openagent`를 우선시하며, 레거시 `oh-my-opencode` 엔트리는 경고와 함께 여전히 로드됩니다. 플러그인 설정 파일은 여전히 일반적으로 `oh-my-opencode.json` 또는 `oh-my-opencode.jsonc`를 사용하며, 전환 기간 동안 레거시와 변경된 basename 모두 인식됩니다.
+**참고**: 배포된 패키지와 바이너리 이름은 `oh-my-opencode-gpt`를 사용하세요. `opencode.json` 내부에서는 호환성 레이어가 이제 플러그인 엔트리 `oh-my-openagent-gpt`를 우선시하며, 레거시 `oh-my-openagent`와 `oh-my-opencode` 엔트리는 경고와 함께 여전히 로드됩니다. 플러그인 설정 파일은 `oh-my-openagent-gpt.json` 또는 `oh-my-openagent-gpt.jsonc`를 사용하세요. 전환 기간 동안 레거시 파일명도 인식됩니다.
 
 익명 텔레메트리는 설치 및 런타임 안정성 개선을 위해 기본적으로 활성화되어 있습니다. PostHog를 사용하며 해시된 설치 식별자를 사용하고 원시 호스트명은 절대 사용하지 않습니다. `OMO_SEND_ANONYMOUS_TELEMETRY=0` 또는 `OMO_DISABLE_POSTHOG=1`로 비활성화할 수 있습니다. [개인정보처리방침](docs/legal/privacy-policy.md)과 [서비스 이용약관](docs/legal/terms-of-service.md)을 참조하세요.
 
@@ -120,7 +120,7 @@ curl -s https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/head
 문서 읽는 시대는 지났습니다. 그냥 이 텍스트를 에이전트한테 붙여넣으세요:
 
 ```
-Read this and tell me why it's not just another boilerplate: https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/README.md
+Read this and tell me why it's not just another boilerplate: https://raw.githubusercontent.com/AlfreddGco/oh-my-openagent-gpt/refs/heads/dev/README.md
 ```
 
 ## 핵심 기능
@@ -269,19 +269,19 @@ project/
 
 > **비하인드 스토리가 궁금하신가요?** 왜 Sisyphus가 돌을 굴리는지, 왜 Hephaestus가 "진정한 장인"인지, 그리고 [오케스트레이션 가이드](docs/guide/orchestration.md)를 읽어보세요.
 >
-> oh-my-opencode가 처음이신가요? 어떤 모델을 써야 할지 **[설치 가이드](docs/guide/installation.md#step-5-understand-your-model-setup)** 에서 추천 조합을 확인하세요.
+> oh-my-opencode-gpt가 처음이신가요? 어떤 모델을 써야 할지 **[설치 가이드](docs/guide/installation.md#step-5-understand-your-model-setup)** 에서 추천 조합을 확인하세요.
 
 ## 제거 (Uninstallation)
 
-oh-my-opencode를 지우려면:
+oh-my-opencode-gpt를 지우려면:
 
 1. **OpenCode 설정에서 플러그인 제거**
 
-   `~/.config/opencode/opencode.json` (또는 `opencode.jsonc`)를 열고 `plugin` 배열에서 `"oh-my-opencode"`를 지우세요.
+   `~/.config/opencode/opencode.json` (또는 `opencode.jsonc`)를 열고 `plugin` 배열에서 `"oh-my-openagent-gpt"`를 지우세요.
 
    ```bash
    # jq 사용 시
-   jq '.plugin = [.plugin[] | select(. != "oh-my-opencode")]' \
+   jq '.plugin = [.plugin[] | select(. != "oh-my-openagent-gpt")]' \
        ~/.config/opencode/opencode.json > /tmp/oc.json && \
        mv /tmp/oc.json ~/.config/opencode/opencode.json
    ```
@@ -290,10 +290,10 @@ oh-my-opencode를 지우려면:
 
    ```bash
    # 사용자 설정 제거
-   rm -f ~/.config/opencode/oh-my-opencode.json ~/.config/opencode/oh-my-opencode.jsonc
+   rm -f ~/.config/opencode/oh-my-openagent-gpt.json ~/.config/opencode/oh-my-openagent-gpt.jsonc
 
    # 프로젝트 설정 제거 (있는 경우)
-   rm -f .opencode/oh-my-opencode.json .opencode/oh-my-opencode.jsonc
+   rm -f .opencode/oh-my-openagent-gpt.json .opencode/oh-my-openagent-gpt.jsonc
    ```
 
 3. **제거 확인**

@@ -2,7 +2,7 @@ import { checkForLegacyPluginEntry } from "./legacy-plugin-warning"
 import { log } from "./logger"
 import { migrateLegacyPluginEntry } from "./migrate-legacy-plugin-entry"
 import { toCanonicalEntry } from "./plugin-entry-migrator"
-import { LEGACY_PLUGIN_NAME, PLUGIN_NAME } from "./plugin-identity"
+import { PLUGIN_NAME } from "./plugin-identity"
 
 type LogLegacyPluginStartupWarningDeps = {
   checkForLegacyPluginEntry?: typeof checkForLegacyPluginEntry
@@ -20,6 +20,11 @@ export function logLegacyPluginStartupWarning(deps: LogLegacyPluginStartupWarnin
     return
   }
 
+  const configPath = result.configPath
+  if (!configPath) {
+    return
+  }
+
   const suggestedEntries = result.legacyEntries.map(toCanonicalEntry)
 
   logFn("[legacy-migration] Legacy plugin entry detected in OpenCode config", {
@@ -29,17 +34,17 @@ export function logLegacyPluginStartupWarning(deps: LogLegacyPluginStartupWarnin
   })
 
   console.warn(
-    `[oh-my-openagent] WARNING: Your opencode.json uses the legacy package name "${LEGACY_PLUGIN_NAME}".`
-    + ` The package has been renamed to "${PLUGIN_NAME}".`
+    `[${PLUGIN_NAME}] WARNING: Your opencode.json uses a legacy plugin name.`
+    + ` The OpenCode plugin entry should be "${PLUGIN_NAME}".`
     + ` Attempting auto-migration...`,
   )
 
-  const migrated = migrateLegacyPluginEntryFn(result.configPath!)
+  const migrated = migrateLegacyPluginEntryFn(configPath)
   if (migrated) {
-    console.warn(`[oh-my-openagent] Auto-migrated opencode.json: ${result.legacyEntries.join(", ")} -> ${suggestedEntries.join(", ")}`)
+    console.warn(`[${PLUGIN_NAME}] Auto-migrated opencode.json: ${result.legacyEntries.join(", ")} -> ${suggestedEntries.join(", ")}`)
   } else {
     console.warn(
-      `[oh-my-openagent] Could not auto-migrate. Please manually update your opencode.json:`
+      `[${PLUGIN_NAME}] Could not auto-migrate. Please manually update your opencode.json:`
       + ` ${result.legacyEntries.map((e, i) => `"${e}" -> "${suggestedEntries[i]}"`).join(", ")}`,
     )
   }

@@ -3,7 +3,7 @@ import { basename, dirname, extname, join } from "node:path"
 
 import { parseJsonc } from "../../shared"
 import { migrateLegacyConfigFile } from "../../shared/migrate-legacy-config-file"
-import { CONFIG_BASENAME, LEGACY_CONFIG_BASENAME } from "../../shared/plugin-identity"
+import { CONFIG_BASENAME, LEGACY_CONFIG_BASENAMES } from "../../shared/plugin-identity"
 import type { ConfigMergeResult, InstallConfig } from "../types"
 import { backupConfigFile } from "./backup-config"
 import { getConfigDir, getOmoConfigPath } from "./config-context"
@@ -29,7 +29,8 @@ export function writeOmoConfig(installConfig: InstallConfig): ConfigMergeResult 
 
   const detectedConfigPath = getOmoConfigPath()
   const canonicalConfigPath = join(dirname(detectedConfigPath), `${CONFIG_BASENAME}${extname(detectedConfigPath) || ".json"}`)
-  const shouldMigrateLegacyPath = basename(detectedConfigPath).startsWith(LEGACY_CONFIG_BASENAME)
+  const detectedConfigBasename = basename(detectedConfigPath)
+  const shouldMigrateLegacyPath = LEGACY_CONFIG_BASENAMES.some((legacyBasename) => detectedConfigBasename.startsWith(legacyBasename))
   const omoConfigPath = shouldMigrateLegacyPath
     ? ((migrateLegacyConfigFile(detectedConfigPath) || existsSync(canonicalConfigPath))
         ? canonicalConfigPath

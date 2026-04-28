@@ -1,6 +1,6 @@
 # Oh My OpenAgent GPT Fork
 
-This repository is a small fork of [oh-my-openagent / oh-my-opencode](https://github.com/code-yeongyu/oh-my-openagent). It is intentionally not a full rewrite of the upstream README.
+This repository is a GPT-isolated fork of [oh-my-openagent / oh-my-opencode](https://github.com/code-yeongyu/oh-my-openagent). It uses `oh-my-openagent-gpt` for plugin/config/cache/log identity and `oh-my-opencode-gpt` for package and binary identity.
 
 For the complete feature list, setup flow, and project documentation, read the upstream project and the docs in this repository:
 
@@ -22,7 +22,7 @@ More changes are coming soon.
 Clone this repository and reference it from your OpenCode config:
 
 ```bash
-git clone https://github.com/code-yeongyu/oh-my-openagent.git /Documents/sources/oh-my-openagent-gpt
+git clone https://github.com/AlfreddGco/oh-my-openagent-gpt.git /Documents/sources/oh-my-openagent-gpt
 ```
 
 Then add the local plugin path to `~/.config/opencode/opencode.json` or `opencode.jsonc`:
