@@ -13,6 +13,7 @@ For the complete feature list, setup flow, and project documentation, read the u
 
 - Agents are tuned around GPT and subscription-based model access.
 - The default OpenCode `Builder` agent is kept instead of being deleted.
+- The default OpenCode `plan` agent is also kept by default; Prometheus is added alongside it unless `sisyphus_agent.replace_plan` is explicitly enabled.
 
 More changes are coming soon.
 

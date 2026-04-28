@@ -414,6 +414,43 @@ describe("Plan agent demote behavior", () => {
     expect(agents[getAgentListDisplayName("prometheus")]?.prompt).toBeDefined()
   })
 
+  test("plan agent remains unchanged when replace_plan is omitted", async () => {
+    // #given
+    const pluginConfig = createPluginConfig({
+      sisyphus_agent: {
+        planner_enabled: true,
+      },
+    })
+    const config: Record<string, unknown> = {
+      model: "anthropic/claude-opus-4-7",
+      agent: {
+        plan: {
+          name: "plan",
+          mode: "primary",
+          prompt: "original plan prompt",
+        },
+      },
+    }
+    const handler = createConfigHandler({
+      ctx: { directory: "/tmp" },
+      pluginConfig,
+      modelCacheState: {
+        anthropicContext1MEnabled: false,
+        modelContextLimitsCache: new Map(),
+      },
+    })
+
+    // #when
+    await handler(config)
+
+    // #then - Prometheus is added without replacing OpenCode's default plan agent
+    const agents = config.agent as Record<string, { mode?: string; name?: string; prompt?: string }>
+    expect(agents[getAgentListDisplayName("prometheus")]).toBeDefined()
+    expect(agents.plan).toBeDefined()
+    expect(agents.plan.mode).toBe("primary")
+    expect(agents.plan.prompt).toBe("original plan prompt")
+  })
+
   test("plan agent remains unchanged when planner is disabled", async () => {
     // #given
     const pluginConfig = createPluginConfig({

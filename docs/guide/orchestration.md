@@ -485,7 +485,7 @@ You can control related features in `oh-my-openagent.json`:
   "sisyphus_agent": {
     "disabled": false, // Enable Atlas orchestration (default: false)
     "planner_enabled": true, // Enable Prometheus (default: true)
-    "replace_plan": true, // Replace default plan agent with Prometheus (default: true)
+    "replace_plan": false, // Replace default plan agent with Prometheus (default: false)
   },
 
   // Hook settings (add to disable)

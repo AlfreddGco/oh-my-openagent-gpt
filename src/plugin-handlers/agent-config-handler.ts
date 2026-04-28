@@ -187,7 +187,7 @@ export async function applyAgentConfig(params: {
   const builderEnabled =
     params.pluginConfig.sisyphus_agent?.default_builder_enabled ?? true;
   const plannerEnabled = params.pluginConfig.sisyphus_agent?.planner_enabled ?? true;
-  const replacePlan = params.pluginConfig.sisyphus_agent?.replace_plan ?? true;
+  const replacePlan = params.pluginConfig.sisyphus_agent?.replace_plan ?? false;
   const shouldDemotePlan = plannerEnabled && replacePlan;
   const configuredDefaultAgent = getConfiguredDefaultAgent(params.config);
 
